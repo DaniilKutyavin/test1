@@ -1,0 +1,342 @@
+.shop-container {
+    position: relative; /* Чтобы блоки могли быть позиционированы относительно этого контейнера */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.shop-slider {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.shop-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Чтобы блоки не мешали взаимодействию с слайдером */
+}
+
+.overlay-block {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px); /* Размытие фона */
+    text-align: center;
+    max-width: 90%; /* Чтобы блоки не были слишком широкими */
+}
+
+.top-left {
+    top: 10%;
+    left: 10%;
+}
+
+.top-right {
+    top: 10%;
+    right: 10%;
+}
+
+.bottom-left {
+    bottom: 10%;
+    left: 10%;
+}
+
+.bottom-right {
+    bottom: 10%;
+    right: 10%;
+}
+
+.shop-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #000;
+}
+
+
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 50px;
+    transform: translateX(-45%);
+    
+}
+
+.swiper-pagination-bullet {
+    background-color: white;
+    opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: white;
+    opacity: 1;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/ofont.ru_Gilroy.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.page-content {
+    overflow-y: auto;
+    background-color: #1A1A1A;
+}
+.scroll-container {
+    display: flex;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    height: 100vh;
+    position: relative;
+    scroll-behavior: smooth; /* Smooth scroll */
+}
+
+.scroll-item {
+    flex: 1 0 100%; /* Take up 100% width */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.circle-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #1A1A1A;
+    color: #FFF;
+}
+
+.circle-svg {
+    width: 400px;
+    height: 400px;
+    margin-right: 50px;
+}
+
+.circle-text {
+    max-width: 600px;
+    text-align: left;
+}
+
+.circle-text h3 {
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    font-size: 50px;
+}
+
+.circle-text p {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    font-size: 18px;
+}
+
+.circle-text p.description {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    font-size: 20px;
+    color: #FFF;
+    line-height: 1.5;
+}
+
+
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../fonts/ofont.ru_Myriad Pro.ttf') format('woff'); /* Замените путь на правильный */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.circle-text p.description {
+    font-family: 'MyriadPro-Regular', sans-serif; /* Используем шрифт Myriad Pro */
+    font-size: 20px; /* Меньший размер шрифта */
+    color: #FFF;
+    line-height: 1.5; /* Интерлиньяж для удобства чтения */
+}
+
+/* Контейнер для блока с градиентом */
+.acid-gradient-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Заполнить весь экран */
+    background: linear-gradient(
+        180deg, /* Направление градиента сверху вниз */
+        rgba(26, 26, 26, 1) 3%, /* Цвет #1A1A1A сверху */
+        rgba(171, 245, 56, 0.4) 50%, /* Плавный переход к градиенту */
+        rgba(254, 217, 25, 0.4) 100% /* Конечный цвет градиента */ 
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.acid-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Чтобы изображение корректно заполняло блок */
+    z-index: 1;
+}
+
+.acid-text {
+    position: absolute;
+    color: #FFF;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    z-index: 2;
+}
+
+.acid-text h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.acid-text p {
+    font-size: 18px;
+}
+
+.store-logos {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.store-logo {
+    width: 150px;
+    height: auto;
+}
+
+.acid-slogan {
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    z-index: 2;
+    width: 400px;
+    height: auto;
+  
+}
+.top-left {
+    top: 13%;
+    left: 10%;
+}
+
+.top-right {
+    top: 5%;
+    right: 5%;
+}
+
+/* Контейнер для блоков с размытием */
+.blur-overlay-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%; /* Половина высоты контейнера */
+    display: flex;
+    flex-direction: column; /* Вертикальное размещение блоков */
+    justify-content: space-between; /* Распределение блоков по высоте */
+    padding: 10px; /* Отступ от границ контейнера */
+    box-sizing: border-box;
+    z-index: 10; /* Убедитесь, что этот z-index выше, чем у слайдера */
+}
+
+/* Верхние блоки */
+.blur-overlay-top {
+    display: flex;
+    justify-content: center; /* Центрирование блоков по горизонтали */
+    gap: 5px; /* Расстояние между блоками */
+    width: 90%; /* Ширина 90% от контейнера */
+    margin: 0 auto; /* Центрирование блока внутри контейнера */
+}
+
+.blur-block {
+    background: rgba(116, 116, 116, 0.5); /* Полупрозрачный черный фон */
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(7px); /* Размытие фона */
+    text-align: left;
+    cursor: pointer; /* Указатель для кликабельных блоков */
+    box-sizing: border-box;
+    height: 228px; /* Высота блоков */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень блока */
+}
+
+/* Верхний блок 1 и 2 */
+.blur-overlay-top .blur-block {
+    width: 45%; /* Ширина для верхних блоков */
+}
+
+/* Нижние блоки */
+.blur-overlay-bottom {
+    display: flex;
+    justify-content: center; /* Центрирование блоков по горизонтали */
+    gap: 5px; /* Расстояние между блоками */
+    width: 90%; /* Ширина 90% от контейнера */
+    margin: 0 auto; /* Центрирование блока внутри контейнера */
+    
+}
+
+.blur-block.long {
+    width: 65%; /* Ширина для удлиненного блока справа (блок 3) */
+}
+
+.blur-block.short {
+    width: 25%; /* Ширина для блока 4 (в два раза меньше, чем у блока 3) */
+}
+
+.blur-block h4 {
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    font-size: 80px; /* Размер заголовка */
+    margin: 0 0 10px; /* Отступ снизу */
+}
+
+/* Описание */
+.blur-block p {
+    font-family: 'MyriadPro-Regular', sans-serif;
+    font-size: 20px; /* Размер описания */
+    line-height: 1.5; /* Интерлиньяж */
+}
+
+.block4-image {
+    width: 35%; /* Ширина изображения */
+    height: auto; /* Автоматическая высота изображения */
+    margin-bottom: 10px; /* Отступ снизу изображения */
+    text-align: center;
+    margin-left: 25%;
+}
+
+/* Основной контейнер для горизонтального скролла */
+.scroll-container {
+    display: flex;
+    overflow-x: hidden; /* Убираем полосы прокрутки */
+    height: 70vh;
+    scroll-behavior: smooth; /* Плавный скролл */
+    background-color: #1A1A1A; /* Фоновый цвет контейнера */
+}
+
+.scroll-item {
+    flex: 0 0 100vw; /* Ширина элемента равна ширине экрана */
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333; /* Цвет фона элементов */
+    color: #FFF; /* Цвет текста */
+    font-size: 2rem;
+    text-align: center;
+}
+
+
+

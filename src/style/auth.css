@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../fonts/ofont.ru_Myriad Pro.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/ofont.ru_Gilroy.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.no-style {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use the parent color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+.no-style:hover {
+    color: #ABF538; /* Optional: Change color on hover */
+}
+
+.login-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 105vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.login-form {
+    background: #1A1A1A;
+    color: white;
+    padding: 40px;
+    border-radius: 12px;
+    width: 700px;
+    max-width: 90%;
+    font-family: 'MyriadPro-Regular';
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+
+.login-form h2 {
+    margin-top: 0;
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 34px;
+    text-align: left;
+}
+
+.login-form .instruction-text {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.login-form .promo-code-text {
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.login-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form .form-field {
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.login-form input {
+    width: 500px; /* Adjust width to prevent stretching */
+    max-width: 100%; /* Ensure it doesn't exceed form field width */
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #000;
+    color: white;
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+}
+
+.login-form button {
+    color: white;
+    width: 500px;
+    text-decoration: none;
+    background-color: #000;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+    text-align: center;
+}
+
+.login-form .form-description {
+    margin-top: 20px;
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+    text-align: left;
+}
+
+.login-form .register-link {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form .register-link a {
+    color: white;
+    text-decoration: none;
+    background-color: #000;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+    text-align: center;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}

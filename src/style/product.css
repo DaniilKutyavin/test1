@@ -1,0 +1,240 @@
+/* Font-face for main and secondary fonts */
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/ofont.ru_Gilroy.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MyriadPro-Regular';
+    src: url('../fonts/ofont.ru_Myriad Pro.ttf') format('woff'); /* Update path if necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* General Styles */
+.productPage {
+    position: relative;
+    background-color: #1A1A1A;
+    color: white;
+    padding-top: 150px;
+    font-family: 'MyriadPro-Regular';
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.backgroundText {
+    font-size: 150px;
+    color: #212020; /* Background text color */
+    position: absolute; /* Adjust position if necessary */
+    top: 0; /* Position it below the product card */
+    left: 20%;
+    z-index: 0; /* Keep it low */
+    font-family: 'Gilroy-ExtraBold';
+    pointer-events: none; /* Allow clicks to pass through */
+}
+
+
+
+.productCard {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Ensure this is positioned */
+    z-index: 1;
+}
+
+.productInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.textContent {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.textContent .description {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.highlightedInfo {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ABF538;
+    font-family: 'Gilroy-ExtraBold';
+}
+
+.productVolume span {
+    background: linear-gradient(90deg, #ABF538, #FED919); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent */
+    font-size: 28px;
+    margin-right: 10px;
+    font-family: 'Gilroy-ExtraBold';
+}
+
+
+
+.producer,
+.pdfLink {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 5px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.productImageAndPrice {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productImage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.productImage img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.priceSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-left: 50px;
+}
+
+.priceButton, .addToCartButton {
+    color: white;
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 24px;
+    border: none;
+    padding: 15px; /* Uniform padding for both buttons */
+    width: 170px; /* Set a fixed width for both buttons */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.priceButton {
+    background: linear-gradient(90deg, rgba(171, 245, 56, 0.4), rgba(253, 217, 25, 0.4));
+    border-radius: 30px 10px 10px 30px; /* Left corners rounded 10px, right corners 5px */
+}
+
+.addToCartButton {
+    background: linear-gradient(90deg, rgba(253, 217, 25, 0.4), rgba(171, 245, 56, 0.4));
+    margin-right: 55px; /* Add margin-left for spacing */
+    border-radius: 10px 30px 30px 10px; /* Left corners rounded 5px, right corners 10px */
+}
+
+.addToCartButton img {
+    width: 30px; /* Adjust icon size if necessary */
+    margin: 0; /* Ensure no margin around the image */
+}
+
+/* Стили для информации о составе */
+.highlightedInfo {
+    font-size: 20px;
+    background: linear-gradient(90deg, rgba(171, 245, 56, 0.4), rgba(253, 217, 25, 0.4));/* Светлый фон для акцента */
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 15px;
+    font-family: 'Gilroy-ExtraBold';
+}
+
+.accordionSection {
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid #49423d;
+    padding-top: 20px;
+}
+
+.accordion {
+    border: none;
+    background: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    font-size: 18px;
+}
+
+.accordion summary {
+    list-style: none; /* Убираем маркеры (треугольники) */
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 'Gilroy-ExtraBold';
+    color: white;
+}
+
+.accordion p {
+    font-size: 16px;
+    font-family: 'MyriadPro-Regular';
+}
+
+.accordion-arrow {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.2s ease;
+}
+
+.accordion[open] .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+.accordion p {
+    padding: 10px 0;
+    font-size: 16px;
+    font-family: 'MyriadPro-Regular';
+    color: #fff;
+}
+
+/* Header Styles */
+.header {
+    text-align: left;
+    padding-top: 160px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #49423d;
+    color: #fff;
+    background-color: #1A1A1A;
+}
+
+.header h1 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 60px;
+    margin: 0;
+}
+
+.header p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+    .backgroundText {
+        font-size: 11vw; /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .backgroundText {
+        font-size: 6vw; /* Further adjust for very small screens */
+    }
+}

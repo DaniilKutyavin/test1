@@ -1,0 +1,40 @@
+.acid-gradient-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Заполнить весь экран */
+    background: linear-gradient(
+        180deg, /* Направление градиента сверху вниз */
+        rgba(26, 26, 26, 1) 3%, /* Цвет #1A1A1A сверху */
+        rgba(171, 245, 56, 0.4) 50%, /* Плавный переход к градиенту */
+        rgba(254, 217, 25, 0.4) 100% /* Конечный цвет градиента */ 
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.acid-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Чтобы изображение корректно заполняло блок */
+    z-index: 1;
+}
+
+.acid-text {
+    position: absolute;
+    color: #FFF;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    z-index: 2;
+}
+
+.acid-text h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.acid-text p {
+    font-size: 18px;
+}

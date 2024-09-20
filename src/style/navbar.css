@@ -1,0 +1,117 @@
+@font-face {
+    font-family: 'Gilroy-ExtraBold';
+    src: url('../fonts/ofont.ru_Gilroy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: transparent;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+    border-bottom: 1px solid white;
+}
+
+.navbar-scrolled {
+    background-color: #1A1A1A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-scrolled .navbar-logo img {
+    height: 35px;
+}
+
+.navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-logo img {
+    margin: 13px;
+    transition: all 0.3s ease;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar-links .active-link {
+    background: linear-gradient(90deg, #ABF538, #FED919);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-user img {
+    height: 45px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -8%;
+    background-color: #1A1A1A;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    z-index: 1000;
+    width: 200px;
+    opacity: 0; /* Start hidden */
+    visibility: hidden; /* Start hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+}
+
+/* Make dropdown visible */
+.navbar-links a.active + .dropdown-menu,
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dropdown menu links */
+.dropdown-menu a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for dropdown links */
+.dropdown-menu a:hover {
+    background-color: #333333; /* Change on hover */
+}
+
+/* Styles for the accordion arrow */
+.accordion-arrow {
+    margin-left: 5px; /* Space between text and arrow */
+    width: 15px;
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+/* Rotate the arrow when the dropdown is open */
+.accordion-arrow.open {
+    transform: rotate(180deg);
+}

@@ -1,0 +1,185 @@
+/* Корзина */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: rgba(46, 45, 45, 0.9); /* Полупрозрачный черный фон */
+    color: white;
+    z-index: 1001;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    overflow-y: auto; /* Включить прокрутку */
+    scrollbar-width: thin; /* Узкий скролл для Firefox */
+}
+
+.cart-overlay::-webkit-scrollbar {
+    width: 6px; /* Узкий скролл */
+}
+
+.cart-overlay::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3); /* Черный полупрозрачный скролл */
+    border-radius: 10px;
+}
+
+.cart-content {
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 360px;
+    color: white;
+    position: relative;
+}
+
+.close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.cart-title, .section-title {
+    text-align: center;
+    font-family: 'MyriadPro-Regular', sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    background: black;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.cart-item-info {
+    flex: 1;
+    margin-right: 15px; /* Отступ для текста от картинки */
+}
+
+.cart-item-image {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.quantity-button {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 1.2em;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.quantity {
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pproduct-price {
+    margin-left: auto;
+    color: white;
+    font-size: 1.1em;
+    text-align: right;
+    min-width: 100px;
+}
+
+/* Способы оплаты */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em; /* Увеличим размер текста для лучшей видимости */
+    color: white;
+}
+
+.payment-options input[type="radio"] {
+    appearance: none; /* Убираем стандартный стиль радио-кнопок */
+    width: 20px;
+    height: 20px;
+    border: 2px solid white; /* Белая граница для кнопок */
+    border-radius: 50%; /* Закругляем кнопки */
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.payment-options input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #ABF538; /* Заливка при выборе */
+    border-radius: 50%;
+    top: 4px;
+    left: 4px;
+}
+
+.payment-options input[type="radio"]:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Добавляем эффект фокуса */
+}
+/* Прочие стили */
+label {
+    margin-top: 10px;
+}
+
+.intext {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: black;
+    color: white;
+}
+
+.total {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.order-button {
+    background: #ABF538;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.order-button:hover {
+    background: #FED919;
+}

@@ -1,0 +1,230 @@
+*::selection {
+  background: #c5ff56;
+  color: black;
+}
+.contacts-container {
+    color: #fff;
+    background-color: #1A1A1A;
+    padding: 50px;
+  }
+  
+  .header {
+    text-align: left;
+    padding-top: 160px; /* Отступ сверху */
+    padding-left: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #49423d;
+    color: #fff;
+    background-color: #1A1A1A;
+  }
+  
+  .header h1 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 60px;
+    margin: 0;
+  }
+  
+  .header p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+  }
+  
+  .contact-block {
+    margin-bottom: 40px;
+  }
+  
+  .contact-block h2 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-details {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет блокам плавно адаптироваться */
+    gap: 20px; /* Отступы между элементами */
+    font-family: 'MyriadPro-Regular';
+    font-size: 18px;
+  }
+  
+  .contact-details div {
+    flex: 1; /* Занимает равное пространство */
+    min-width: 200px; /* Минимальная ширина для предотвращения переполнения текста */
+  }
+  
+  .contact-details p {
+    margin: 0; /* Убираем отступы у параграфов */
+  }
+  
+  .contact-details a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+  
+  /* Стили для формы */
+  .partnership-form {
+    margin-top: 50px;
+    width: 700px;
+  }
+  
+  .partnership-form h2 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 32px;
+  }
+  
+  .partnership-form form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Выравниваем поля по верху */
+    gap: 20px; /* Отступ между полями и кнопкой */
+  }
+  
+  .form-group {
+    flex: 1; /* Занимает все доступное пространство */
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 18px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 5px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+  }
+  
+  .form-fields {
+    flex: 3; /* Контейнер для полей формы */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступы между полями */
+  }
+  
+  .submit-button {
+    flex: 1; /* Кнопка занимает всё доступное пространство */
+    background-color: #1A1A1A;
+    color: #ffffff;
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 24px;
+    font-family: 'Gilroy-ExtraBold';
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    height: 250px; /* Кнопка на всю высоту формы */
+    transition: background-color 0.3s ease;
+    border: 1px solid white;
+  }
+  
+  .submit-button:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+  }
+  
+  .partnership-form p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 18px;
+  }
+  
+  /* Адаптивные стили для мобильных устройств */
+  @media (max-width: 768px) {
+    .contact-details {
+      flex-direction: column; /* В колонку на мобильных */
+    }
+  
+    .partnership-form form {
+      flex-direction: column;
+    }
+  
+    .submit-button {
+      width: 100%;
+      height: auto; /* Кнопка будет по ширине */
+    }
+  }
+  
+  .employee-cards {
+    background-color: #1A1A1A;
+  }
+  
+  .employee-cards h2 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .employee-card {
+    position: relative;
+    width: 300px;
+    height: 550px;
+    background-color: #1A1A1A;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 30px;
+  }
+  
+  .employee-card img {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #fff;
+  }
+  
+  .employee-info {
+    padding: 10px;
+    color: #fff;
+  }
+  
+  .employee-info h3 {
+    font-family: 'Gilroy-ExtraBold';
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .employee-info p {
+    font-family: 'MyriadPro-Regular';
+    font-size: 16px;
+    margin: 0;
+  }
+  
+  /* Apply specific border-radius to all corners except the bottom-left */
+  .employee-img  {
+    border-top-right-radius: 70px;
+    border-top-left-radius: 70px;
+    border-bottom-right-radius: 150px;
+    border-bottom-left-radius: 0;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .employee-card {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+
+  .color {
+    background: linear-gradient(90deg, #ABF538, #FED919);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
