@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 40px; /* Увеличено для соответствия новому макету */
     background-color: transparent;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
@@ -26,11 +26,15 @@
 }
 
 .navbar-content {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Логотип слева, ссылки по центру, иконки справа */
     align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 100%; /* Полная ширина */
+    padding: 0 20px; /* Отступы */
+}
+
+.navbar-logo {
+    justify-self: start; /* Логотип слева */
 }
 
 .navbar-logo img {
@@ -40,35 +44,26 @@
 
 .navbar-links {
     display: flex;
+    justify-self: center;
     align-items: center;
-    position: relative;
-    gap: 20px;
+    gap: 30px;
+    position: relative; /* Добавляем позиционирование для родителей */
 }
 
 .navbar-links a {
+    position: relative; /* Относительное позиционирование ссылки */
     text-decoration: none;
     color: white;
     font-family: 'Gilroy-ExtraBold', sans-serif;
     font-weight: bold;
+    font-size: 20px;
     transition: color 0.3s ease;
-}
-
-.navbar-links .active-link {
-    background: linear-gradient(90deg, #ABF538, #FED919);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.navbar-user img {
-    height: 45px;
-    cursor: pointer;
-    margin: 10px;
 }
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
-    left: -8%;
+    top: 100%; /* Располагаем меню прямо под ссылкой */
+    left: 0; /* Выровняем меню по левому краю ссылки */
     background-color: #1A1A1A;
     border: 1px solid #ffffff;
     border-radius: 4px;
@@ -78,40 +73,53 @@
     gap: 10px;
     padding: 10px;
     z-index: 1000;
-    width: 200px;
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Start hidden */
-    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    width: 220px;
+    opacity: 0; /* Скрываем по умолчанию */
+    visibility: hidden; /* Скрытие по умолчанию */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Make dropdown visible */
+.navbar-links .active-link {
+    background: linear-gradient(90deg, #ABF538, #FED919);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navbar-user {
+    justify-self: end; /* Иконки справа */
+}
+
+.navbar-user img {
+    height: 45px;
+    cursor: pointer;
+    margin-left: 15px; /* Отступ между иконками */
+}
+
+
+
 .navbar-links a.active + .dropdown-menu,
 .dropdown-menu.show {
     opacity: 1;
     visibility: visible;
 }
 
-/* Dropdown menu links */
 .dropdown-menu a {
     text-decoration: none;
     color: #ffffff;
-    padding: 5px 10px;
+    padding: 3px;
     transition: background-color 0.3s ease;
 }
 
-/* Hover effect for dropdown links */
 .dropdown-menu a:hover {
-    background-color: #333333; /* Change on hover */
+    background-color: #333333; /* Изменение фона при наведении */
 }
 
-/* Styles for the accordion arrow */
 .accordion-arrow {
-    margin-left: 5px; /* Space between text and arrow */
+    margin-left: 5px; /* Отступ между текстом и стрелкой */
     width: 15px;
-    transition: transform 0.3s ease; /* Smooth rotation */
+    transition: transform 0.3s ease; /* Плавный поворот */
 }
 
-/* Rotate the arrow when the dropdown is open */
 .accordion-arrow.open {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Поворот стрелки при открытии меню */
 }

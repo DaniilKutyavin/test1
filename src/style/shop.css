@@ -2,19 +2,20 @@
     position: relative; /* Чтобы блоки могли быть позиционированы относительно этого контейнера */
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden; 
+    
 }
 
 .shop-slider {
     width: 100%;
     height: 100vh;
-    
-}
 
+}
 .shop-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: bottom; /* Изображение будет позиционироваться по верхнему краю */
 }
 
 .overlay-container {
@@ -165,141 +166,91 @@
     line-height: 1.5; /* Интерлиньяж для удобства чтения */
 }
 
-/* Контейнер для блока с градиентом */
-.acid-gradient-container {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Заполнить весь экран */
-    background: linear-gradient(
-        180deg, /* Направление градиента сверху вниз */
-        rgba(26, 26, 26, 1) 3%, /* Цвет #1A1A1A сверху */
-        rgba(171, 245, 56, 0.4) 50%, /* Плавный переход к градиенту */
-        rgba(254, 217, 25, 0.4) 100% /* Конечный цвет градиента */ 
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-
-.acid-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Чтобы изображение корректно заполняло блок */
-    z-index: 1;
-}
-
-.acid-text {
-    position: absolute;
-    color: #FFF;
-    font-family: 'Gilroy-ExtraBold', sans-serif;
-    z-index: 2;
-}
-
-.acid-text h1 {
-    font-size: 36px;
-    margin: 0;
-}
-
-.acid-text p {
-    font-size: 18px;
-}
-
-.store-logos {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-}
-
-.store-logo {
-    width: 150px;
-    height: auto;
-}
-
-.acid-slogan {
-    position: absolute;
-    top: 1%;
-    right: 5%;
-    z-index: 2;
-    width: 400px;
-    height: auto;
-  
-}
-.top-left {
-    top: 13%;
-    left: 10%;
-}
-
-.top-right {
-    top: 5%;
-    right: 5%;
-}
-
-/* Контейнер для блоков с размытием */
 .blur-overlay-container {
     position: absolute;
-    bottom: 0;
+    bottom: 5%;
+    left: 0;
     width: 100%;
-    height: 50%; /* Половина высоты контейнера */
-    display: flex;
-    flex-direction: column; /* Вертикальное размещение блоков */
-    justify-content: space-between; /* Распределение блоков по высоте */
-    padding: 10px; /* Отступ от границ контейнера */
-    box-sizing: border-box;
-    z-index: 10; /* Убедитесь, что этот z-index выше, чем у слайдера */
-}
-
-/* Верхние блоки */
-.blur-overlay-top {
-    display: flex;
-    justify-content: center; /* Центрирование блоков по горизонтали */
-    gap: 5px; /* Расстояние между блоками */
-    width: 90%; /* Ширина 90% от контейнера */
-    margin: 0 auto; /* Центрирование блока внутри контейнера */
-}
-
-.blur-block {
-    background: rgba(116, 116, 116, 0.5); /* Полупрозрачный черный фон */
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    backdrop-filter: blur(7px); /* Размытие фона */
-    text-align: left;
-    cursor: pointer; /* Указатель для кликабельных блоков */
-    box-sizing: border-box;
-    height: 228px; /* Высота блоков */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень блока */
-}
-
-/* Верхний блок 1 и 2 */
-.blur-overlay-top .blur-block {
-    width: 45%; /* Ширина для верхних блоков */
-}
-
-/* Нижние блоки */
-.blur-overlay-bottom {
-    display: flex;
-    justify-content: center; /* Центрирование блоков по горизонтали */
-    gap: 5px; /* Расстояние между блоками */
-    width: 90%; /* Ширина 90% от контейнера */
-    margin: 0 auto; /* Центрирование блока внутри контейнера */
+    pointer-events: none;
+    z-index: 10;
+    margin-bottom: -15px;
     
 }
 
+.blur-overlay-top {
+    display: flex;
+    justify-content: space-between; /* Для равномерного распределения */
+    gap: 5px; /* Отступ между блоками */
+    width: 100%; /* Полная ширина */
+    padding: 0 10px;
+}
+
+.blur-overlay-bottom {
+    display: flex;
+    justify-content: space-between; /* Для равномерного распределения */
+    gap: 5px; /* Отступ между блоками */
+    width: 100%; /* Полная ширина */
+    margin-top: 5px; /* Отступ между верхним и нижним рядами */
+    padding: 0 10px;
+}
+
+.blur-block {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    text-align: center;
+    flex: 1; /* Каждый блок займет равное пространство */
+    cursor: pointer; /* Указатель на кликабельные элементы */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    color: inherit; /* Унаследовать цвет текста от родительского элемента */
+    display: flex; /* Убедитесь, что содержимое внутри блока отображается корректно */
+    flex-direction: column; /* Выстраиваем элементы в колонку */
+    justify-content: center; /* Центрируем содержимое по вертикали */
+    align-items: flex-start; /* Выравнивание элементов по левому краю */
+    pointer-events: auto;
+}
+.top-left {
+    border-top-left-radius: 25px; /* Закруглённый верхний левый угол */
+}
+
+.top-right {
+    border-top-right-radius: 25px; /* Закруглённый верхний правый угол */
+}
+
+.bottom-left {
+    border-bottom-right-radius: 25px; /* Закруглённый нижний левый угол */
+}
+
+.bottom-right {
+    border-bottom-left-radius: 25px; /* Закруглённый нижний правый угол */
+}
+
 .blur-block.long {
-    width: 65%; /* Ширина для удлиненного блока справа (блок 3) */
+    flex: 3; /* Длинный блок займет больше пространства */
+    
+}
+.text-left {
+    align-self: flex-start; /* Выравнивание текста по левому краю */
 }
 
 .blur-block.short {
-    width: 25%; /* Ширина для блока 4 (в два раза меньше, чем у блока 3) */
+    flex: 1;
+    display: flex; 
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
 }
 
+
+
+.block4-image {
+    max-width: 100%;
+    height: auto;
+}
 .blur-block h4 {
     font-family: 'Gilroy-ExtraBold', sans-serif;
     font-size: 80px; /* Размер заголовка */
     margin: 0 0 10px; /* Отступ снизу */
+    
 }
 
 /* Описание */
@@ -309,12 +260,14 @@
     line-height: 1.5; /* Интерлиньяж */
 }
 
-.block4-image {
-    width: 35%; /* Ширина изображения */
-    height: auto; /* Автоматическая высота изображения */
-    margin-bottom: 10px; /* Отступ снизу изображения */
-    text-align: center;
-    margin-left: 25%;
+@media (max-width: 1300px) {
+    .blur-block h4 {
+        font-size: 60px; /* Размер для маленьких экранов */
+    }
+
+    .blur-block p {
+        font-size: 15px; /* Размер для маленьких экранов */
+    }
 }
 
 /* Основной контейнер для горизонтального скролла */
@@ -340,3 +293,139 @@
 
 
 
+.reward-scale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #4f6423, #1A1A1A 25%); /* Градиент слева направо */
+    padding-top: 20px;
+    color: #fff;
+    position: relative;
+    border-top: 2px solid #fff;
+}
+
+.gift-container {
+    display: flex;
+    margin-left: 20px;
+    flex-shrink: 0; /* Блок с текстом не будет сжиматься */
+    margin-bottom: 15px;
+}
+
+.gift-container img {
+    margin-right: 10px;
+    width: 32px; /* Уменьшение размера изображения слева */
+    height: auto; /* Сохраняем пропорции картинки */
+}
+
+.gift-text h4 {
+    font-family: 'MyriadPro-Regular'; /* Применение шрифта */
+    font-weight: bold;
+    margin: 0;
+    white-space: nowrap; /* Текст не будет переноситься */
+    font-size: 26px; /* Увеличение размера текста */
+}
+
+.gift-text p {
+    font-family: 'MyriadPro-Regular'; /* Применение шрифта */
+    margin: 0;
+    font-size: 18px; /* Увеличение размера текста */
+    white-space: nowrap; /* Текст не будет сжиматься и переноситься */
+}
+
+.scale-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.scale-line {
+    width: 100%;
+    border-top: 1px solid #fff; /* Белая линия сверху */
+    margin-bottom: 10px;
+}
+
+.scale-values {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.scale-values span {
+    font-family: 'Gilroy-ExtraBold'; /* Применение шрифта */
+    font-size: 22px; /* Увеличение размера цифр */
+    position: relative;
+    text-align: center;
+    width: 100px; /* Устанавливаем ширину для равномерного позиционирования */
+    margin-bottom: -25px;
+}
+
+.scale-bars {
+    position: relative;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 4px; /* Толщина палочек */
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%); /* Центрируем палочки */
+    margin-bottom: -15px;
+}
+
+.bar-1 {
+    left: calc(15% + 50px); /* Настройка для 30 000 */
+}
+
+.bar-2 {
+    left: 50%; /* Настройка для 50 000 */
+}
+
+.bar-3 {
+    left: calc(95% - 45px); /* Настройка для 100 000 */
+}
+
+.cart-container {
+    margin-right: 2%;
+    margin-bottom: 10px;
+}
+
+.cart-container img {
+    width: 30px;
+    height: auto;
+   
+}
+
+.scale-values .value-1 {
+    margin-left: 15%; /* Сдвигаем 30 000 правее */
+}
+
+.scale-values .value-2 {
+    margin-left: -10%; /* Сдвигаем 50 000 левее */
+}
+
+
+.scale-values .value-3 {
+    margin-right: 5%; /* Сдвигаем 50 000 левее */
+}
+
+.reward-scale {
+    position: relative; /* Измените на relative, чтобы он не фиксировался изначально */
+    z-index: 10; /* Убедитесь, что он выше других элементов */
+  }
+
+.reward-scale.sticky {
+    position: fixed; /* Фиксированное положение, когда он становится липким */
+    bottom: 0; /* Привязать к нижней части экрана */
+    left: 0;
+    right: 0;
+    z-index: 10; /* Убедитесь, что он перекрывает другие элементы */
+  }

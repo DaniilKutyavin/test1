@@ -12,7 +12,7 @@ const Store = () => {
                 <img src={acidImage} alt="Acid Gradient Background" className="acid-image" />
                 
                 {/* Текст в левом верхнем углу */}
-                <div className="acid-text top-left">
+                <div className="acid-text ttop-left">
                     <h1>В скором времени</h1>
                     <p>Загружайте приложение на площадках</p>
                     <div className="store-logos">
@@ -22,12 +22,12 @@ const Store = () => {
                 </div>
 
                 {/* Слоган в правом верхнем углу */}
-                <div className="acid-slogan top-right">
+                <div className="acid-slogan ttop-right">
                     <img src={sloganSvg} alt="Slogan" />
                 </div>
             </div>
             </div>    
-  ); 
+  );  
 };
 
 export default Store;

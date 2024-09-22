@@ -90,13 +90,13 @@ const NavBar = () => {
                         <Link to={CONTACTS_ROUTER} className={isActive(CONTACTS_ROUTER) ? 'active-link' : ''}>Контакты</Link>
                     </nav>
                     <div className="navbar-user">
-                        <img src={Ls} alt="User Icon" onClick={handleLoginClick} style={{ height: '35px', cursor: 'pointer', margin: '10px' }}  />
-                        <img src={bask} alt="Cart Icon" onClick={handleCartClick} style={{ height: '35px', cursor: 'pointer', margin: '10px' }} />
+                        <img src={Ls} alt="User Icon" onClick={handleLoginClick} style={{ height: '40px', cursor: 'pointer', margin: '10px' }}  />
+                       
                     </div>
                 </div>
             </header>
             {isLoginFormOpen && <LoginForm onClose={closeLoginForm} />} {/* Render the login form if open */}
-            {isCartOpen && <Cart onClose={closeCart} />} {/* Render the cart if open */}
+          
         </>
     );
 };
