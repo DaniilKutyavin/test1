@@ -3,8 +3,8 @@ import { Context } from "..";
 import '../style/navbar.css';
 import { Link, useLocation } from 'react-router-dom';
 import { CONTACTS_ROUTER, DELIVERY_ROUTER, NEWS_ROUTER, SHOP_ROUTER, LOGIN_ROUTER, REGISTRATION_ROUTER, PRODUCT_ROUTER } from "../utils/consts";
-import LogoWhite from '../img/Group 1.svg';
-import LogoScrolled from '../img/Group.svg';
+import LogoWhite from '../img/Лого белый.svg';
+import LogoScrolled from '../img/Лого цветной.svg';
 import Ls from '../img/человек 500.svg';
 import LoginForm from './LoginForm'; // Make sure this path is correct
 import arrowRight from '../img/стрелка вниз.svg';

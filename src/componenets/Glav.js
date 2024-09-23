@@ -106,23 +106,16 @@ const Shop = () => {
 
   return (
     <>
-      {isVideoPlaying && (
-        <video
-          ref={videoRef}
-          src={videoSrc}
-          autoPlay
-          muted
-          loop={false}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 9999 // Убедитесь, что видео поверх остальных элементов
-          }}
-        />
+     {isVideoPlaying && (
+        <div className="video-container">
+          <video
+            ref={videoRef}
+            src={videoSrc}
+            autoPlay
+            muted
+            loop={false}
+          />
+        </div>
       )}
       {/* Слайдер */}
       <div className="shop-container">
