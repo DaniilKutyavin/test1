@@ -3,6 +3,7 @@ import '../style/news.css';
 import Store from './Store';
 import arrowDown from '../img/стрелка вниз.svg'; // Импортируем изображение стрелки
 import { Link } from 'react-router-dom';
+import Shkal from './Shkal';
 
 const newsData = [
   { year: '5 Июля', theme: 'Удабрять селитрой в непогоду нужно придерживаясь одного...', image: 'https://i.pinimg.com/736x/ed/ed/44/eded44822befbce3d2014ea17bfa472b.jpg' },
@@ -26,8 +27,10 @@ const News = () => {
   return (
     <>
       <div className="header">
+      <div className="title-block">
         <h1>Новости</h1>
         <p>Будьте в курсе всех событий</p>
+        </div>
       </div>
       <div className="news-section">
         <div className="news-content">
@@ -52,6 +55,7 @@ const News = () => {
         </div>
       </div>
       <Store />
+      <Shkal/>
     </>
   );
 };

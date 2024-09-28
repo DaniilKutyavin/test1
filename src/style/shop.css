@@ -95,60 +95,6 @@
     overflow-y: auto;
     background-color: #1A1A1A;
 }
-.scroll-container {
-    display: flex;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-    height: 100vh;
-    position: relative;
-    scroll-behavior: smooth; /* Smooth scroll */
-}
-
-.scroll-item {
-    flex: 1 0 100%; /* Take up 100% width */
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.circle-info-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: #1A1A1A;
-    color: #FFF;
-}
-
-.circle-svg {
-    width: 400px;
-    height: 400px;
-    margin-right: 50px;
-}
-
-.circle-text {
-    max-width: 600px;
-    text-align: left;
-}
-
-.circle-text h3 {
-    font-family: 'Gilroy-ExtraBold', sans-serif;
-    font-size: 50px;
-}
-
-.circle-text p {
-    font-family: 'MyriadPro-Regular', sans-serif;
-    font-size: 18px;
-}
-
-.circle-text p.description {
-    font-family: 'MyriadPro-Regular', sans-serif;
-    font-size: 20px;
-    color: #FFF;
-    line-height: 1.5;
-}
 
 
 
@@ -159,12 +105,7 @@
     font-style: normal;
 }
 
-.circle-text p.description {
-    font-family: 'MyriadPro-Regular', sans-serif; /* Используем шрифт Myriad Pro */
-    font-size: 20px; /* Меньший размер шрифта */
-    color: #FFF;
-    line-height: 1.5; /* Интерлиньяж для удобства чтения */
-}
+
 
 .blur-overlay-container {
     position: absolute;
@@ -255,7 +196,7 @@
 
 /* Описание */
 .blur-block p {
-    font-family: 'MyriadPro-Regular', sans-serif;
+    font-family: 'Gilroy-ExtraBold', sans-serif;
     font-size: 20px; /* Размер описания */
     line-height: 1.5; /* Интерлиньяж */
 }
@@ -269,28 +210,6 @@
         font-size: 15px; /* Размер для маленьких экранов */
     }
 }
-
-/* Основной контейнер для горизонтального скролла */
-.scroll-container {
-    display: flex;
-    overflow-x: hidden; /* Убираем полосы прокрутки */
-    height: 70vh;
-    scroll-behavior: smooth; /* Плавный скролл */
-    background-color: #1A1A1A; /* Фоновый цвет контейнера */
-}
-
-.scroll-item {
-    flex: 0 0 100vw; /* Ширина элемента равна ширине экрана */
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #333; /* Цвет фона элементов */
-    color: #FFF; /* Цвет текста */
-    font-size: 2rem;
-    text-align: center;
-}
-
 
 
 .reward-scale {

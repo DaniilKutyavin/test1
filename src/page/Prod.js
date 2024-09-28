@@ -4,13 +4,18 @@ import bask from '../img/корзина белая 1.svg';
 import iconProd from '../img/Образец ХСЗР на сайт.png';
 import arrowDown from '../img/стрелка вниз.svg';
 import Store from '../componenets/Store';
+import Shkal from '../componenets/Shkal';
 
 const Prod = () => {
+    const [isInfoBlockVisible, setIsInfoBlockVisible] = useState(true);
     const [filtersOpen, setFiltersOpen] = useState({
-        category: false,
-        culture: false,
-        manufacturer: false,
+        category: true,
+        culture: true,
+        manufacturer: true,
     });
+    
+    const [currentPage, setCurrentPage] = useState(1); // Добавляем состояние текущей страницы
+    const totalPages = 4; // Общее количество страниц
 
     const toggleFilter = (filter) => {
         setFiltersOpen({
@@ -19,14 +24,38 @@ const Prod = () => {
         });
     };
 
+    const closeInfoBlock = () => {
+        setIsInfoBlockVisible(false);
+    };
+
+    const handlePageChange = (page) => {
+        if (page >= 1 && page <= totalPages) {
+            setCurrentPage(page);
+        }
+    };
+
     return (
         <>
             <div className="header">
-                <h1>ХСЗР</h1>
-                <p>Бесплатная доставка от 10.000 руб (Безнал +5%)</p>
-            </div>
-            <div className="wrapper">
-                <div className="catalog-container">
+    <div className="title-block">
+        <h1>ХСЗР</h1>
+        <p>Бесплатная доставка от 10.000 руб (Безнал +5%)</p>
+    </div>
+    
+    {isInfoBlockVisible && (
+                    <div className="info-block">
+                        <span className="exclamation">!</span>
+                        <div className="info-text">
+                            <p>1.Бесплатная доставка от 35000 руб</p>
+                            <p>2.По безналичному расчету к стоимости ХСЗР добавляется 5% в корзине автоматически подтянутся суммы после добавления товара</p>
+                        </div>
+                        <button className="close-btn" onClick={closeInfoBlock}>&times;</button>
+                    </div>
+                )}
+</div>
+
+            <div className="wrapperr">
+                <div className="catalog-containerr full-width">
                     {/* Левая секция с поиском и фильтрами */}
                     <div className="left-section">
                         <div className="filter-block">
@@ -39,12 +68,21 @@ const Prod = () => {
                                     <img src={arrowDown} alt="Arrow Down" className={`filter-arrow ${filtersOpen.category ? 'open' : ''}`} />
                                 </h3>
                                 {filtersOpen.category && (
-                                    <div className="filter-content">
-                                        <label>
+                                    <div className="filter-content" >
+                                        <label >
                                             <input type="checkbox" /> Категория 1
                                         </label>
                                         <label>
                                             <input type="checkbox" /> Категория 2
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Категория 3
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Категория 3
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Категория 3
                                         </label>
                                         <label>
                                             <input type="checkbox" /> Категория 3
@@ -64,6 +102,18 @@ const Prod = () => {
                                         </label>
                                         <label>
                                             <input type="checkbox" /> Культура 2
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Культура 3
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Культура 3
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Культура 3
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" /> Культура 3
                                         </label>
                                         <label>
                                             <input type="checkbox" /> Культура 3
@@ -155,12 +205,26 @@ const Prod = () => {
 
                         {/* Пагинация */}
                         <div className="pagination">
-                            <button className="pagination-arrow">←</button>
-                            <button className="pagination-arrow">→</button>
+                            <button className="pagination-arrow" onClick={() => handlePageChange(currentPage - 1)}>
+                                <img src={arrowDown} alt="Previous"  style={{ transform: 'rotate(90deg)' }} />
+                            </button>
+                            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                                <button
+                                    key={page}
+                                    className={`pagination-page ${currentPage === page ? 'active' : ''}`}
+                                    onClick={() => handlePageChange(page)}
+                                >
+                                    {page}
+                                </button>
+                            ))}
+                            <button className="pagination-arrow" onClick={() => handlePageChange(currentPage + 1)}>
+                                <img src={arrowDown} alt="Next"  style={{ transform: 'rotate(-90deg)' }}/>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+            <Shkal/>
             <Store />
         </>
     );

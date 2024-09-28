@@ -68,8 +68,10 @@
   }
   
   .social-icon {
-    width: 33px;
-    height: auto;
+    height: 25px; /* Set a uniform height */
+    width: auto;
+    margin-left: 10px; /* Add spacing between icons */
+    vertical-align: middle; 
   }
   
   .social-icon:hover {

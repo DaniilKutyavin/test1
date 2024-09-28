@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/newss.css';
 import Store from './Store';
+import Shkal from './Shkal';
 
 const NewsArticle = () => {
   return (
@@ -22,6 +23,7 @@ const NewsArticle = () => {
       </p>
     </div>
     <Store/>
+    <Shkal/>
     </>
   );
 };

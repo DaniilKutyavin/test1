@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import '../style/Buy.css';
 import arrowDown from '../img/стрелка вниз.svg';
 import Store from '../componenets/Store';
+import Shkal from '../componenets/Shkal';
 
 const Prod = () => {
     const [filtersOpen, setFiltersOpen] = useState({
-        category: false,
-        culture: false,
-        manufacturer: false,
+        category: true,
+        culture: true,
+        manufacturer: true,
     });
 
     const [expandedBlocks, setExpandedBlocks] = useState({});
@@ -29,11 +30,13 @@ const Prod = () => {
     return (
         <>
             <div className="header">
+            <div className="title-block">
                 <h1>Закупка С/Х культур</h1>
                 <p>Продайте по максимально выгодным ценам</p>
+                </div>
             </div>
-            <div className="wrapper">
-                <div className="catalog-container">
+            <div className="wrapperr">
+                <div className="catalog-containerr">
                     <div className="left-section">
                         <div className="filter-block">
                             <div className="search-bar">
@@ -89,6 +92,7 @@ const Prod = () => {
                 </div>
             </div>
             <Store />
+            <Shkal/>
         </>
     );
 };

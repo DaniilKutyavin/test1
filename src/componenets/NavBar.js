@@ -67,23 +67,24 @@ const NavBar = () => {
                         </Link>
                     </div>
                     <nav className="navbar-links">
-                        <a 
-                            href="#catalog" 
-                            className={isActive(PRODUCT_ROUTER) ? 'active-link' : ''}
-                            onClick={handleDropdownToggle}
-                        >
-                            Каталог товаров 
-                            <img 
-                                src={arrowRight} 
-                                alt="Arrow" 
-                                className={`accordion-arrow ${isDropdownOpen ? 'open' : ''}`} 
-                            />
-                        </a>
-                        <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
-                            <Link to='/product'>ХСЗР</Link>
-                            <Link to='/product'>Удобрения</Link>
-                            <Link to='/product'>Посевной материал</Link>
-                            <Link to='/buy'>Закупка культур</Link>
+                        <div className="catalog-wrapper" onClick={handleDropdownToggle}>
+                            <a 
+                                href="#catalog" 
+                                className={isActive(PRODUCT_ROUTER) ? 'active-link' : ''}
+                            >
+                                Каталог товаров 
+                                <img 
+                                    src={arrowRight} 
+                                    alt="Arrow" 
+                                    className={`accordion-arrow ${isDropdownOpen ? 'open' : ''}`} 
+                                />
+                            </a>
+                            <div className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`}>
+                                <Link to='/product'>ХСЗР</Link>
+                                <Link to='/product'>Удобрения</Link>
+                                <Link to='/product'>Посевной материал</Link>
+                                <Link to='/buy'>Закупка культур</Link>
+                            </div>
                         </div>
                         <Link to={DELIVERY_ROUTER} className={isActive(DELIVERY_ROUTER) ? 'active-link' : ''}>Доставка</Link>
                         <Link to={NEWS_ROUTER} className={isActive(NEWS_ROUTER) ? 'active-link' : ''}>Новости</Link>
@@ -91,12 +92,10 @@ const NavBar = () => {
                     </nav>
                     <div className="navbar-user">
                         <img src={Ls} alt="User Icon" onClick={handleLoginClick} style={{ height: '40px', cursor: 'pointer', margin: '10px' }}  />
-                       
                     </div>
                 </div>
             </header>
-            {isLoginFormOpen && <LoginForm onClose={closeLoginForm} />} {/* Render the login form if open */}
-          
+            {isLoginFormOpen && <LoginForm onClose={closeLoginForm} />}
         </>
     );
 };

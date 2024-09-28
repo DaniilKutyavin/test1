@@ -1,13 +1,16 @@
 import React from 'react';
 import Store from './Store';
 import '../style/Contacts.css';
+import Shkal from './Shkal';
 
 const Contacts = () => {
   return (
     <>
     <div className="header">
+    <div className="title-block">
           <h1>Контакты</h1>
           <p>На связи 24/7</p>
+        </div>
         </div>
       <div className="contacts-container">
         <div className="contact-block">
@@ -108,7 +111,8 @@ const Contacts = () => {
           </div>
         </div>
      
-      <Store />  
+      <Store /> 
+      <Shkal/> 
     </>
   );
 };

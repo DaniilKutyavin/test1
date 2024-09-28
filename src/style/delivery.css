@@ -159,3 +159,22 @@
   font-size: 1.1rem; /* Размер шрифта для выделенного текста */
   font-family: 'Gilroy-ExtraBold', sans-serif; /* Шрифт для выделенного текста */
 }
+
+.pod {
+  margin-top: 5px; /* Adjust this to control spacing between "По телефону" and the phone number */
+  font-size: 14px; /* You can adjust the font size if necessary */
+  font-family: 'MyriadPro-Regular', sans-serif; /* Use a different font if required */
+  color: #fff; /* Ensure the text color matches your design */
+  background: linear-gradient(90deg, #ABF538, #FED919);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.disclaimer-body p {
+  margin: 0; /* Remove the default margin */
+  margin-bottom: 20px; /* Adjust this value to set the desired spacing */
+}
+
+.disclaimer-body ul {
+  padding-left: 25px; /* Adjust this value to set the desired indentation */
+}

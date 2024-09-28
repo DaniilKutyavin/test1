@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../style/auth.css'; // Ensure the path is correct
-import { REGISTRATION_ROUTER } from "../utils/consts";
+import '../style/auth.css';
 import ReCAPTCHA from "react-google-recaptcha";
 
 const LoginForm = ({ onClose }) => {
@@ -11,7 +10,8 @@ const LoginForm = ({ onClose }) => {
         password: '',
         confirmPassword: '',
         fullName: '',
-        captcha: ''
+        captcha: '',
+        subscribe: false
     });
 
     const handleInputChange = (e) => {
@@ -19,6 +19,14 @@ const LoginForm = ({ onClose }) => {
         setFormData(prevData => ({
             ...prevData,
             [name]: value
+        }));
+    };
+
+    const handleCheckboxChange = (e) => {
+        const { name, checked } = e.target;
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: checked
         }));
     };
 
@@ -45,40 +53,35 @@ const LoginForm = ({ onClose }) => {
     return (
         <div className="login-form-overlay">
             <div className="login-form">
-                <div className="close-btn" onClick={onClose}>✖</div>
-                <h2>{isRegistering ? 'Регистрация' : 'Вход'}</h2>
+                <div className="close-btnn" onClick={onClose}>✖</div>
+                <h1>{isRegistering ? 'Создать учётную запись' : 'Вход'}</h1>
                 <p className="instruction-text" dangerouslySetInnerHTML={{
                     __html: isRegistering 
-                        ? '<h3>Скидка каждому новому покупателю 500 руб.! <p>Что необходимо для того, чтобы получить скидку?</p></h3>' 
+                        ? '<h3>Скидка каждому новому покупателю 500 руб.!</h3> <p><h3>Что необходимо для того, чтобы получить скидку?</h3></p> Зарегистрироваться на сайте. Добавить в корзину товары на сумму от 35000 руб <p></p>Ввести подарочный промо-код из письма, полученного при регистрации' 
                         : 'Если у вас есть учётная запись на нашем сайте, пожалуйста, авторизируйтесь.'
                 }} />
-                {isRegistering && (
-                    <p className="promo-code-text">
-                        Зарегистрироваться на сайте. Добавить в корзину товар на сумму от 10000 руб.
-                        <p>Ввести подарочный промо-код из письма, полученного при регистрации</p>
-                    </p>
-                    
-                )}
+                
                 <form onSubmit={handleSubmit} className="login-form-content">
-                    <div className="form-row">
-                        {isRegistering && (
-                            <>
-                                <div className="form-field">
-                                    <label htmlFor="fullName">ФИО:</label>
-                                    <input
-                                        type="text"
-                                        id="fullName"
-                                        name="fullName"
-                                        value={formData.fullName}
-                                        onChange={handleInputChange}
-                                        required
-                                    />
-                                </div>
-                            </>
-                        )}
-                        <div className="form-field">
+                    {isRegistering && (
+                        <>
+                            <h1>Личная информация</h1>
+                            <div className="email-password-row">
+                            <div className="form-field">
+                                <label htmlFor="fullName">ФИО:</label>
+                                <input
+                                className='log'
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleInputChange}
+                                    required
+                                />
+                            </div>
+                            <div className="form-field">
                             <label htmlFor="email">Email:</label>
                             <input
+                            className='log'
                                 type="email"
                                 id="email"
                                 name="email"
@@ -86,10 +89,32 @@ const LoginForm = ({ onClose }) => {
                                 onChange={handleInputChange}
                                 required
                             />
+                            
                         </div>
-                        <div className="form-field">
+                        </div>
+                            <div className="form-field">
+                                <label>
+                                    <input
+                                    className="sub"
+                                        type="checkbox"
+                                        name="subscribe"
+                                        checked={formData.subscribe}
+                                        onChange={handleCheckboxChange}
+                                        
+                                    />
+                                    Подписаться на рассылку
+                                </label>
+                            </div>
+                            
+                        </>
+                    )}
+
+                    <h1>{isRegistering ? 'Информация для авторизации': ''}</h1>
+                    <div className="email-password-row">
+                    <div className="form-field">
                             <label htmlFor="password">Пароль:</label>
                             <input
+                            className='log'
                                 type="password"
                                 id="password"
                                 name="password"
@@ -98,10 +123,10 @@ const LoginForm = ({ onClose }) => {
                                 required
                             />
                         </div>
-                        {isRegistering && (
-                            <div className="form-field">
+                        <div className="form-field">
                                 <label htmlFor="confirmPassword">Подтвердите пароль:</label>
                                 <input
+                                className='log'
                                     type="password"
                                     id="confirmPassword"
                                     name="confirmPassword"
@@ -110,32 +135,41 @@ const LoginForm = ({ onClose }) => {
                                     required
                                 />
                             </div>
-                        )}
-                        {isRegistering && (
+                    </div>
+
+                    {isRegistering && (
+                        <>
+                        <div className="email-password-row">
                             <div className="form-field">
-                                <ReCAPTCHA
-                                    sitekey="6LfnmkIqAAAAABqJSlyYuQhYznyW9w565sMqbtAk"
-                                    onChange={handleCaptchaChange}
+                                <label htmlFor="confirmPassword">Введите код с картинки:</label>
+                                <input
+                                   className='log'
                                 />
                             </div>
-                        )}
-                    </div>
-                    <button type="submit">{isRegistering ? 'Создать' : 'Войти'}</button>
+
+                            <div className="form-field">
+                                <label htmlFor="captcha">Здесь картинка будет потом</label>
+                                <input className='log'/>
+                            </div>
+                        </div>
+                        </>
+                    )}
+                    
+                    <button type="submit" className="submit-buttonn">{isRegistering ? 'Создать' : 'Войти'}</button>
                 </form>
+
                 {!isRegistering && (
                     <>
-                    <p>Нету аккаунта? <Link className="no-style" onClick={handleRegisterClick}>Зарегистрируся!</Link> </p>
-                    <p className="form-description">
-                        Создав учётную запись на нашем сайте, вы будете тратить
-                        меньше времени на оформление заказа, сможете хранить
-                        несколько адресов доставки, отслеживать состояние
-                        заказов, а также многое другое.
-                    </p>
+                        <h1>Создать учетную запись</h1>
+                        <p className="form-description">
+                            Создав учётную запись на нашем сайте, вы будете тратить
+                            меньше времени на оформление заказа, сможете хранить
+                            несколько адресов доставки, отслеживать состояние
+                            заказов, а также многое другое.
+                        </p>
+                        <button className="submit-buttonn" onClick={handleRegisterClick}>Создать</button>
                     </>
                 )}
-                <div className="register-link">
-   
-</div>
             </div>
         </div>
     );

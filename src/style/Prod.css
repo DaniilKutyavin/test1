@@ -19,21 +19,25 @@ body {
     color: white;
 }
 
-.wrapper {
+.wrapperr {
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Высота экрана */
-    padding: 0 20px; /* Чтобы контейнер не прилипал к краям экрана */
+    align-items: flex-start; /* Align items to the start */
+    min-height: 100vh; /* Full height of the viewport */
+    padding: 0 20px; /* Optional padding */
+    
+   
 }
 
-.catalog-container {
+.catalog-containerr {
     display: flex;
     padding: 20px;
-    width: 1300px;
     border-radius: 10px;
     justify-content: space-between;
+    width: 100%; /* Change this to 100% */
 }
+
+
 
 .left-section {
     width: 250px;
@@ -93,11 +97,13 @@ body {
     display: block; /* Stack each label vertically */
     margin-bottom: 10px; /* Space between filter items */
     color: white; /* Ensure text is readable */
-    font-size: 14px; /* Adjust font size if needed */
+    font-size: 28px;
 }
+
 
 .right-section {
     flex: 1;
+    margin-left: 40px;
 }
 
 .product-grid {
@@ -153,7 +159,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-   
+    width: 100%;
 }
 
 .product-price {
@@ -162,7 +168,7 @@ body {
     color: white;
     transition: transform 0.3s ease, margin-right 0.3s ease;
     position: relative; /* Ensure the price moves as expected */
-    width: 100%;
+   
 }
 
 .cart-icon {
@@ -175,7 +181,7 @@ body {
 }
 
 .product-card:hover .product-price {
-    transform: translateX(calc(75%)); /* Move price to the right */
+    transform: translateX(calc(340px)); /* Move price to the right */
     margin-right: 0; /* Remove margin */
 }
 
@@ -186,30 +192,41 @@ body {
 
 .pagination {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: left;
     margin-top: 20px;
 }
 
 .pagination-arrow {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 10px;
+    background: none;
+    border: none;
     cursor: pointer;
-    margin-left: 10px;
-    transition: background-color 0.3s ease;
+    padding: 0 10px;
 }
 
-.pagination-arrow:hover {
-    background-color: #f0f0f0;
+.pagination-page {
+    background: none;
+    border: none;
+    font-size: 18px;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
 }
+
+.pagination-page.active {
+    border: 2px solid white;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
 
 .header {
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 160px;
     padding-left: 50px;
     padding-bottom: 50px;
-    border-bottom: 1px solid #49423d;
-    color: #fff;
     background-color: #1A1A1A;
 }
 
@@ -241,7 +258,63 @@ body {
     background-color: #555;
 }
 
+.largeText {
+    font-size: 18px; /* Задайте нужный размер шрифта */
+}
 
+.title-block {
+    display: flex;
+    flex-direction: column; /* Размещаем заголовок и текст вертикально */
+    
+}
 
+.info-block {
+    position: relative;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    background-color: #3f0a0a; /* Красный фон блока */
+    padding: 10px;
+    border-radius: 15px;
+    color: white;
+    margin-right: 100px;
+    border:  solid 2px #aa0202;
+}
 
+.exclamation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aa0202;
+    border:  solid 1px #9e320d;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+    min-width: 30px;  /* Фиксируем минимальную ширину */
+    min-height: 30px; /* Фиксируем минимальную высоту */
+}
 
+.info-text p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px; /* Отступ от верхнего края */
+    right: 5px; /* Отступ от правого края */
+    background: none; /* Убираем фон */
+    border: none; /* Убираем рамку */
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ff9999; /* Цвет при наведении */
+}
