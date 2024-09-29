@@ -25,7 +25,7 @@
 }
 
 .backgroundText {
-    font-size: 150px;
+    font-size: 180px;
     color: #212020; /* Background text color */
     position: absolute; /* Adjust position if necessary */
     top: 0; /* Position it below the product card */
@@ -40,8 +40,7 @@
 .productCard {
     border-radius: 8px;
     padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -61,7 +60,7 @@
 }
 
 .textContent .description {
-    font-size: 28px;
+    font-size: 35px;
     margin-bottom: 10px;
     font-family: 'MyriadPro-Regular';
 }
@@ -86,23 +85,24 @@
 
 .producer,
 .pdfLink {
-    font-size: 14px;
+    font-size: 20px;
     color: #fff;
     margin-bottom: 5px;
     font-family: 'MyriadPro-Regular';
 }
 
 .productImageAndPrice {
-    width: 35%;
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .productImage {
-    width: 100%;
+    width: 100%; /* Take full width of the container */
     display: flex;
     justify-content: center;
+    margin-top: -100px;
 }
 
 .productImage img {
@@ -113,10 +113,7 @@
 
 .priceSection {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-left: 50px;
 }
 
 .priceButton, .addToCartButton {
@@ -130,6 +127,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 20px;
 }
 
 .priceButton {
@@ -178,7 +176,7 @@
 .accordion summary {
     list-style: none; /* Убираем маркеры (треугольники) */
     cursor: pointer;
-    font-size: 22px;
+    font-size: 30px;
     font-family: 'Gilroy-ExtraBold';
     color: white;
 }

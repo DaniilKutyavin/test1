@@ -6,6 +6,7 @@ import { CONTACTS_ROUTER, DELIVERY_ROUTER, NEWS_ROUTER, SHOP_ROUTER, LOGIN_ROUTE
 import LogoWhite from '../img/Лого белый.svg';
 import LogoScrolled from '../img/Лого цветной.svg';
 import Ls from '../img/человек 500.svg';
+import LsAlt from '../img/человек цвет.svg';
 import LoginForm from './LoginForm'; // Make sure this path is correct
 import arrowRight from '../img/стрелка вниз.svg';
 import bask from '../img/корзина белая 1.svg';
@@ -16,6 +17,7 @@ const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isLoginFormOpen, setIsLoginFormOpen] = useState(false); // State for showing the login form
+    const [currentIcon, setCurrentIcon] = useState(Ls);
     const location = useLocation();
 
     useEffect(() => {
@@ -32,11 +34,13 @@ const NavBar = () => {
     const isActive = (path) => location.pathname === path;
 
     const handleLoginClick = () => {
-        setIsLoginFormOpen(true); // Show the login form
+        setIsLoginFormOpen(true); // Показать форму входа
+        setCurrentIcon(LsAlt); // Меняем картинку на другую при открытии формы
     };
 
     const closeLoginForm = () => {
-        setIsLoginFormOpen(false); // Hide the login form
+        setIsLoginFormOpen(false); // Скрыть форму входа
+        setCurrentIcon(Ls); // Вернуть исходную картинку при закрытии формы
     };
 
     const handleDropdownToggle = () => {
@@ -52,6 +56,8 @@ const NavBar = () => {
     const closeCart = () => {
         setIsCartOpen(false); // Hide the cart
     };
+
+    
 
     return (
         <>
@@ -70,7 +76,7 @@ const NavBar = () => {
                         <div className="catalog-wrapper" onClick={handleDropdownToggle}>
                             <a 
                                 href="#catalog" 
-                                className={isActive(PRODUCT_ROUTER) ? 'active-link' : ''}
+                                className={isActive(PRODUCT_ROUTER) ? 'active-link big' : ''}
                             >
                                 Каталог товаров 
                                 <img 
@@ -86,12 +92,17 @@ const NavBar = () => {
                                 <Link to='/buy'>Закупка культур</Link>
                             </div>
                         </div>
-                        <Link to={DELIVERY_ROUTER} className={isActive(DELIVERY_ROUTER) ? 'active-link' : ''}>Доставка</Link>
-                        <Link to={NEWS_ROUTER} className={isActive(NEWS_ROUTER) ? 'active-link' : ''}>Новости</Link>
-                        <Link to={CONTACTS_ROUTER} className={isActive(CONTACTS_ROUTER) ? 'active-link' : ''}>Контакты</Link>
+                        <Link to={DELIVERY_ROUTER} className={isActive(DELIVERY_ROUTER) ? 'active-link big' : 'big'}>Доставка</Link>
+                        <Link to={NEWS_ROUTER} className={isActive(NEWS_ROUTER) ? 'active-link big' : 'big'}>Новости</Link>
+                        <Link to={CONTACTS_ROUTER} className={isActive(CONTACTS_ROUTER) ? 'active-link big' : 'big'}>Контакты</Link>
                     </nav>
                     <div className="navbar-user">
-                        <img src={Ls} alt="User Icon" onClick={handleLoginClick} style={{ height: '40px', cursor: 'pointer', margin: '10px' }}  />
+                    <img 
+                            src={currentIcon} // Динамически отображаем картинку на основе состояния
+                            alt="User Icon" 
+                            onClick={handleLoginClick} 
+                            style={{ height: '40px', cursor: 'pointer', margin: '10px' }}  
+                        />
                     </div>
                 </div>
             </header>

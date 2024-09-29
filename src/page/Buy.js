@@ -43,21 +43,23 @@ const Prod = () => {
                                 <input type="text" placeholder="Поиск..." className="search-input" />
                             </div>
                             <div className="filter-section">
-                                <h3 onClick={() => toggleFilter('category')}>
+                                <h2 onClick={() => toggleFilter('category')}>
                                     Категория
                                     <img src={arrowDown} alt="Arrow Down" className={`filter-arrow ${filtersOpen.category ? 'open' : ''}`} />
-                                </h3>
+                                </h2>
                                 {filtersOpen.category && (
                                     <div className="filter-content">
-                                        <label>
-                                            <input type="checkbox" /> Категория 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 3
-                                        </label>
+                                       <input type="checkbox" class="custom-checkbox" id="hhapppy" name="happy" value="yes"/>
+                                        <label for="hhapppy">Категория 1</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy2" name="happy" value="yes"/>
+                                        <label for="hhapppy2">Категория 2</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy3" name="happy" value="yes"/>
+                                        <label for="hhapppy3">Категория 3</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy4" name="happy" value="yes"/>
+                                        <label for="hhapppy4">Категория 4</label>
                                     </div>
                                 )}
                             </div>
@@ -71,7 +73,7 @@ const Prod = () => {
                                     <div className="product-header" onClick={() => toggleExpand(id)}>
                                         <div className="product-title-price">
                                             <span className="product-title">Название продукта {id}</span>
-                                            <span className="product-price">Цена {id}</span>
+                                            <span className="product-pricee">Цена {id}</span>
                                         </div>
                                         <img src={arrowDown} alt="Arrow Down" className={`expand-arrow ${expandedBlocks[id] ? 'open' : ''}`} />
                                     </div>

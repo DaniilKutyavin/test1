@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../style/delivery.css';
 import Store from './Store';
 import mapImage from '../img/карта.svg';
@@ -17,6 +17,32 @@ import iconPoch from '../img/почтой.svg';
 import iconPred from '../img/предзаказ.svg';
 import Shkal from './Shkal';
 const Delivery = () => {
+  useEffect(() => {
+    const handleSelectionChange = () => {
+      const selection = window.getSelection();
+      const selectedText = selection.toString();
+
+      if (selectedText.length > 0) {
+        document.querySelectorAll('.pod').forEach(el => {
+          el.style.background = '';  // Убрать градиентный фон при выделении
+          el.style.color = '#c5ff56';  // Изменить цвет выделенного текста
+        });
+      } else {
+        document.querySelectorAll('.pod').forEach(el => {
+          el.style.background = 'linear-gradient(90deg, #ABF538, #FED919)';
+          el.style.webkitBackgroundClip = 'text';
+          el.style.webkitTextFillColor = 'transparent';
+        });
+      }
+    };
+
+    document.addEventListener('selectionchange', handleSelectionChange);
+
+    // Удаление обработчика при размонтировании компонента
+    return () => {
+      document.removeEventListener('selectionchange', handleSelectionChange);
+    };
+  }, []);
   return (
     <>
     <div className="header">
@@ -81,7 +107,7 @@ const Delivery = () => {
             <div className="left-half">
               <div className="top-block"><h2>Как получить заказ?</h2> <p>Среднее время доставки составляет 3 дня
               </p></div>
-              <div className="bottom-block"><img src={icon2}/></div>
+              <div className="bottom-block pravo"><img src={icon2}/></div>
             </div>
             <div className="right-half">
               <div className="window-block"><img src={iconKur}/><div >
@@ -110,7 +136,7 @@ const Delivery = () => {
     <p><strong>При условии покупки товара под заказ</strong> - сроки ожидания отправки заказа в пределах 2-7 дней.</p>
     <p><strong>При условии срочности заказа</strong> - возможно рассмотрение отправки заявки в индивидуальном порядке.</p>
     <p>Оплата за доставку не входит в стоимость товара и рассчитывается дополнительно. Доставку оплачивает заказчик. Сумма доставки рассчитывается при оформлении заказа.</p>
-    <p>Действующие тарифы, списки городов, сроки доставки уточняйте на сайте перевозчика, либо у операторов нашего интернет-магазина Agromarket.ru.</p>
+    <p>Действующие тарифы, списки городов, сроки доставки уточняйте на сайте перевозчика, либо у операторов нашего интернет-магазина asatag.com.</p>
     <p>Все товары, представленные на нашем сайте, являются оригинальными, поставляются исключительно в заводской упаковке компании-производителя и имеют соответствующие сертификаты и/или декларации о соответствии.</p>
     
     <div className="disclaimer-header">
@@ -124,7 +150,7 @@ const Delivery = () => {
       <li>ИНН/КПП</li>
       <li>Юридический/фактический адрес</li>
       <li>№ р/с, банковские реквизиты</li>
-    </ul>
+    </ul> 
     <p>Оплату следует осуществлять только после согласования деталей заказа с нашими операторами. При оформлении заказа товар резервируется на срок не более 3-х календарных дней с момента подачи заявки, в противном случае наличие товара на складе не гарантируется. При условии отсутствия оплаты в указанный срок товар снимается с резерва.</p>
     <div className="disclaimer-header">
     <h2>Ограничение гарантий и ответственности</h2>

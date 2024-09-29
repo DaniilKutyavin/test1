@@ -4,6 +4,10 @@ import LogoScrolled from '../img/лого чистое.svg';
 import Ls from '../img/человек 500.svg';
 import tg from '../img/телеграм.svg';
 import vk from '../img/Вконтакте.svg';
+import a from '../img/a.svg';
+import s from '../img/s.svg';
+import t from '../img/t.svg';
+import g from '../img/g.svg';
 import { Link, useLocation } from 'react-router-dom';
 import privacyPolicy from '../file/Политика асатаг.pdf';
 import LoginForm from './LoginForm'; 
@@ -21,7 +25,16 @@ const closeLoginForm = () => {
     <>
     <footer className="footer">
       <div className="left">
-        <img src={LogoScrolled} alt="Logo" className="logo" />
+      <div className="logo-animation">
+            <span className="logo-letter"><img src={a} alt="a" /></span>
+            <span className="logo-letter"><img src={s} alt="s" /></span>
+            <span className="logo-letter"><img src={a} alt="a" /></span>
+            <span className="logo-letter"><img src={t} alt="t" /></span>
+            <span className="logo-letter"><img src={a} alt="a" /></span>
+            <span className="logo-letter"><img src={g} alt="g" /></span>
+          </div>
+
+        
         <div className="contact-info">
           <p>+7 (990) 096 04 81</p>
           <p>+7 (990) 096 04 81</p>

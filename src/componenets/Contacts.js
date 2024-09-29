@@ -22,7 +22,7 @@ const Contacts = () => {
             </div>
             <div>
               <p><strong>Телефон:</strong></p>
-              <p><a href="tel:+79901242829" className='color'>+7 (990) 124 28 29</a></p>
+              <p><a href="tel:+79901242829" className='color pod'>+7 (990) 124 28 29</a></p>
             </div>
             <div>
               <p><strong>Почта:</strong></p>
@@ -40,7 +40,7 @@ const Contacts = () => {
             </div>
             <div>
               <p><strong>Телефон:</strong></p>
-              <p><a href="tel:+79900960481"  className='color'>+7 (990) 096 04 81</a></p>
+              <p><a href="tel:+79900960481"  className='color pod'>+7 (990) 096 04 81</a></p>
             </div>
             <div>
               <p><strong>Почта:</strong></p>
@@ -58,7 +58,7 @@ const Contacts = () => {
             </div>
             <div>
               <p><strong>Телефон:</strong></p>
-              <p><a href="tel:+79901242829"  className='color'>+7 (990) 124 28 29</a></p>
+              <p><a href="tel:+79901242829"  className='color pod'>+7 (990) 124 28 29</a></p>
             </div>
             <div>
               <p><strong>Почта:</strong></p>
@@ -96,7 +96,7 @@ const Contacts = () => {
               <div className="employee-info">
                 <h3>Архипова Елизавета
                 Андреева</h3>
-                <p className='color'>fasfasfafasfsaf</p>
+                <p className='pod'>fasfasfafasfsaf</p>
               </div>
             </div>
             <div className="employee-card">
@@ -104,7 +104,7 @@ const Contacts = () => {
               <div className="employee-info">
                 <h3>Архипова Елизавета
                 Андреева</h3>
-                <p  className='color'>fasfasfafasfsaf</p>
+                <p  className='pod'>fasfasfafasfsaf</p>
               </div>
             </div>
             {/* Add more employee cards as needed */}

@@ -194,12 +194,16 @@
     
 }
 
-/* Описание */
-.blur-block p {
+  
+.opis{
     font-family: 'Gilroy-ExtraBold', sans-serif;
+  }
+.blur-block p {
     font-size: 20px; /* Размер описания */
     line-height: 1.5; /* Интерлиньяж */
 }
+/* Описание */
+
 
 @media (max-width: 1300px) {
     .blur-block h4 {

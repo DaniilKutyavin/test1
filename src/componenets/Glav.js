@@ -15,6 +15,9 @@ import img2 from "../img/kb2.png";
 import img3 from "../img/kb3.png";
 import img4 from "../img/kb4.png";
 import img5 from "../img/kb5.png";
+import img6 from "../img/img6.jpg";
+import img7 from "../img/img7.jpg";
+import img8 from "../img/img8.jpg";
 import circle1 from "../img/кольцо1.svg";
 import circle2 from "../img/кольцо2.svg";
 import circle3 from "../img/кольцо3.svg";
@@ -96,7 +99,7 @@ const Shop = () => {
           pagination={{ clickable: true }}
           className="shop-slider"
         >
-          {[img1, img2, img3, img4, img5].map((src, index) => (
+          {[img6,img7,img8,img1, img2, img3, img4, img5].map((src, index) => (
             <SwiperSlide key={index} className="shop-slide">
               <img src={src} alt={`Slide ${index}`} />
             </SwiperSlide>
@@ -105,24 +108,24 @@ const Shop = () => {
         <div className="blur-overlay-container">
           <div className="blur-overlay-top">
             <Link to="/product" className="blur-block top-left">
-              <p >163</p>
+              <p className="opis">163</p>
               <h4>ХСЗР</h4>
-              <p>Обеспечте защиту ваших культур</p>
+              <p >Обеспечте защиту ваших культур</p>
             </Link>
             <Link to="/product" className="blur-block top-right">
-              <p>24</p>
+              <p className="opis">24</p>
               <h4>Удобрения</h4>
               <p>Потдерживайте почву необходимыми элементами питания</p>
             </Link>
           </div>
           <div className="blur-overlay-bottom">
             <Link to="/product" className="blur-block long bottom-right">
-              <p>19</p>
+              <p className="opis">19</p>
               <h4>Посевной материал</h4>
               <p>Запаситесь качественными семенами заранее</p>
             </Link>
             <Link to="/product" className="blur-block short bottom-left">
-              <p className="text-left">8</p>
+              <p className="text-left opis">8</p>
               <img src={kolos} alt="Block 4 Image" className="block4-image" />
             </Link>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import '../style/Prod.css';
 import bask from '../img/корзина белая 1.svg';
 import iconProd from '../img/Образец ХСЗР на сайт.png';
@@ -33,13 +33,14 @@ const Prod = () => {
             setCurrentPage(page);
         }
     };
+  
 
     return (
         <>
             <div className="header">
     <div className="title-block">
         <h1>ХСЗР</h1>
-        <p>Бесплатная доставка от 10.000 руб (Безнал +5%)</p>
+        <p className='pod'>Обеспечьте защиту Ваших культур</p>
     </div>
     
     {isInfoBlockVisible && (
@@ -59,130 +60,79 @@ const Prod = () => {
                     {/* Левая секция с поиском и фильтрами */}
                     <div className="left-section">
                         <div className="filter-block">
-                            <div className="search-bar">
-                                <input type="text" placeholder="Поиск..." className="search-input" />
-                            </div>
+                        <div className="search-bar">
+    <input 
+        type="text" 
+        placeholder="Поиск..." 
+        className="search-input" 
+    />
+    <span className="search-icon">&#128269;</span> {/* HTML код значка лупы */}
+</div>
                             <div className="filter-section">
-                                <h3 onClick={() => toggleFilter('category')}>
+                                <h2 onClick={() => toggleFilter('category')}>
                                     Категория
                                     <img src={arrowDown} alt="Arrow Down" className={`filter-arrow ${filtersOpen.category ? 'open' : ''}`} />
-                                </h3>
+                                </h2>
                                 {filtersOpen.category && (
                                     <div className="filter-content" >
-                                        <label >
-                                            <input type="checkbox" /> Категория 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Категория 3
-                                        </label>
+                                        <input type="checkbox" class="custom-checkbox" id="happy" name="happy" value="yes"/>
+                                        <label for="happy">Категория 1</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happy2" name="happy" value="yes"/>
+                                        <label for="happy2">Категория 2</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happy3" name="happy" value="yes"/>
+                                        <label for="happy3">Категория 3</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happy4" name="happy" value="yes"/>
+                                        <label for="happy4">Категория 4</label>
+                                       
                                     </div>
                                 )}
                             </div>
                             <div className="filter-section">
-                                <h3 onClick={() => toggleFilter('culture')}>
+                                <h2 onClick={() => toggleFilter('culture')}>
                                     Культура
                                     <img src={arrowDown} alt="Arrow Down" className={`filter-arrow ${filtersOpen.culture ? 'open' : ''}`} />
-                                </h3>
+                                </h2>
                                 {filtersOpen.culture && (
                                     <div className="filter-content">
-                                        <label>
-                                            <input type="checkbox" /> Культура 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Культура 3
-                                        </label>
+                                        <input type="checkbox" class="custom-checkbox" id="happpy" name="happy" value="yes"/>
+                                        <label for="happpy">Культура 1</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happpy2" name="happy" value="yes"/>
+                                        <label for="happpy2">Культура 2</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happpy3" name="happy" value="yes"/>
+                                        <label for="happpy3">Культура 3</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="happpy4" name="happy" value="yes"/>
+                                        <label for="happpy4">Культура 4</label>
                                     </div>
                                 )}
                             </div>
                             <div className="filter-section">
-                                <h3 onClick={() => toggleFilter('manufacturer')}>
+                                <h2 onClick={() => toggleFilter('manufacturer')}>
                                     Производитель
                                     <img src={arrowDown} alt="Arrow Down" className={`filter-arrow ${filtersOpen.manufacturer ? 'open' : ''}`} />
-                                </h3>
+                                </h2>
                                 {filtersOpen.manufacturer && (
                                     <div className="filter-content">
-                                        <label>
-                                            <input type="checkbox" /> Производитель 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 1
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 2
-                                        </label>
-                                        <label>
-                                            <input type="checkbox" /> Производитель 3
-                                        </label>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy" name="happy" value="yes"/>
+                                        <label for="hhapppy">Производитель 1</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy2" name="happy" value="yes"/>
+                                        <label for="hhapppy2">Производитель 2</label>
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy3" name="happy" value="yes"/> 
+                                        <p/>
+                                        <input type="checkbox" class="custom-checkbox" id="hhapppy4" name="happy" value="yes"/>
+                                        <label for="hhapppy4">Производитель 4</label>
+                                      
                                     </div>
                                 )}
                             </div>
-                            <button className="filter-cancel-button">Отмена</button>
+                            <button className="filter-cancel-button">Очистить</button>
                         </div>
                     </div>
 
@@ -194,7 +144,7 @@ const Prod = () => {
                                 <img src={iconProd} alt="Product" className="product-image" />
                                 <h4 className="product-title">Торнадо 500</h4>
                                 <p className="product-description">Протиоконазол, 40 г/л + флудиоксонил, 30 г/л + азоксистробин, 15 г/л</p>
-                                <p className="product-volume">10 л</p>
+                                <p className="product-volume pod">10 л</p>
                                 <div className="price-container">
                                     <span className="product-price">1000 ₽</span>
                                     <img src={bask} alt="Cart" className="cart-icon" />

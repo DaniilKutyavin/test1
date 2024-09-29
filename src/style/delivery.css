@@ -178,3 +178,11 @@
 .disclaimer-body ul {
   padding-left: 25px; /* Adjust this value to set the desired indentation */
 }
+
+.pod::selection {
+  background: #c5ff56;
+  -webkit-text-fill-color: black;
+}
+.pravo {
+  margin-left: 10px;
+}
