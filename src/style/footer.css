@@ -27,7 +27,7 @@
   }
   
   .logo {
-    width: 150px;
+    width: 170px;
     margin-bottom: 10px;
   }
   
@@ -86,53 +86,4 @@
   .footer a {
     text-decoration: none; /* Убирает подчеркивание */
     color: inherit; /* Устанавливает цвет текста ссылки таким же, как у родительского элемента */
-}
-.logo-animation {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-letter {
-  opacity: 0; /* Скрываем буквы по умолчанию */
-  transform: translateY(100%); /* Начальное положение букв */
-  animation: slideIn 1s ease forwards; /* Анимация для каждой буквы */
-}
-.logo-letter img {
-  width: 30px;
-}
-
-.logo-letter:nth-child(1) {
-  animation-delay: 0.1s; /* Задержка для первой буквы */
-}
-
-.logo-letter:nth-child(2) {
-  animation-delay: 0.2s; /* Задержка для второй буквы */
-}
-
-.logo-letter:nth-child(3) {
-  animation-delay: 0.3s;
-}
-
-.logo-letter:nth-child(4) {
-  animation-delay: 0.4s;
-}
-
-.logo-letter:nth-child(5) {
-  animation-delay: 0.5s;
-}
-
-.logo-letter:nth-child(6) {
-  animation-delay: 0.6s;
-}
-
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

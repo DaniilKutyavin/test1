@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "../style/shop.css";
 import { Link, useLocation } from "react-router-dom";
 import Cart from './Cart';
-import videoSrc from "../img/Asa.mp4";
+import videoSrc from "../img/main.gif";
 
 
 import img1 from "../img/kb1.png";
@@ -61,33 +61,25 @@ const Shop = () => {
   const handleCartClick = () => setIsCartOpen(true);
   const closeCart = () => setIsCartOpen(false);
 
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const videoRef = useRef(null);
+  const [isGifVisible, setIsGifVisible] = useState(true);
 
   useEffect(() => {
-    const handleVideoEnded = () => {
-      setIsVideoPlaying(false);
-    };
+    // Установите время в зависимости от продолжительности вашего GIF
+    const gifDuration = 5000; // например, 5 секунд
+    const timeout = setTimeout(() => {
+      setIsGifVisible(false);
+    }, gifDuration);
 
-    if (videoRef.current) {
-      videoRef.current.addEventListener("ended", handleVideoEnded);
-      videoRef.current.play().catch((error) => {
-        console.error("Ошибка воспроизведения видео:", error);
-      });
-    }
-
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.removeEventListener("ended", handleVideoEnded);
-      }
-      // Сброс прокрутки при размонтировании
-      document.body.style.overflow = 'auto';
-    };
-  }, [isVideoPlaying]);
+    return () => clearTimeout(timeout); // очистить таймаут при размонтировании компонента
+  }, []);
 
   return (
     <>
-    
+       {isGifVisible && (
+        <div className="video-container">
+          <img src={videoSrc} alt="Animated GIF" />
+        </div>
+      )}
       {/* Слайдер */}
       <div className="shop-container">
         <Swiper

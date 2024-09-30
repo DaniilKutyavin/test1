@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import '../style/footer.css';
-import LogoScrolled from '../img/лого чистое.svg';
+import LogoScrolled from '../img/podval.gif';
 import Ls from '../img/человек 500.svg';
 import tg from '../img/телеграм.svg';
 import vk from '../img/Вконтакте.svg';
@@ -25,14 +25,7 @@ const closeLoginForm = () => {
     <>
     <footer className="footer">
       <div className="left">
-      <div className="logo-animation">
-            <span className="logo-letter"><img src={a} alt="a" /></span>
-            <span className="logo-letter"><img src={s} alt="s" /></span>
-            <span className="logo-letter"><img src={a} alt="a" /></span>
-            <span className="logo-letter"><img src={t} alt="t" /></span>
-            <span className="logo-letter"><img src={a} alt="a" /></span>
-            <span className="logo-letter"><img src={g} alt="g" /></span>
-          </div>
+      <img src={LogoScrolled} alt="Logo" className="logo" />
 
         
         <div className="contact-info">
