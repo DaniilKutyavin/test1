@@ -7,7 +7,7 @@ const NewsArticle = () => {
   return (
     <>
     <div className="article-container">
-      <h1 className="article-title">Название статьи</h1>
+      <h1 className="article-title pod">Название статьи</h1>
       <img
         src="https://i.pinimg.com/736x/ed/ed/44/eded44822befbce3d2014ea17bfa472b.jpg"
         alt="Новость"

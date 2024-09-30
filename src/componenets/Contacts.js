@@ -7,9 +7,9 @@ const Contacts = () => {
   return (
     <>
     <div className="header">
-    <div className="title-block">
+    <div className="title-block"> 
           <h1>Контакты</h1>
-          <p>На связи 24/7</p>
+          <p className="pod">На связи 24/7</p>
         </div>
         </div>
       <div className="contacts-container">
@@ -67,27 +67,29 @@ const Contacts = () => {
           </div>
         </div>
 
-        <div className="partnership-form">
-          <h2>Желаете стать нашим партнером?</h2>
-          <form>
-            <div className="form-fields">
-              <div className="form-group">
-                <label htmlFor="name">Имя Отчество</label>
-                <input type="text" id="name" name="name" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" />
-              </div>
-            </div>
-            <button type="submit" className="submit-button">Отправить</button>
-          </form>
-          <p>Наш менеджер свяжется с Вами в ближайшее время.</p>
+        <div class="partnership-form">
+        <h2>Желаете стать нашим партнером?</h2>
+  <form>
+    <div class="form-container">
+      <div class="form-fields">
+        <div class="form-group">
+          <label for="name">Имя Отчество</label>
+          <input type="text" id="name" />
         </div>
+        <div class="form-group">
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+        </div>
+      </div>
+      <button type="submit" class="submit-button">Отправить</button>
+    </div>
+    <p>Наш менеджер свяжется с Вами в ближайшее время.</p>
+  </form>
+</div>
       </div>
       <div className="employee-cards">
           <div className="card-container">

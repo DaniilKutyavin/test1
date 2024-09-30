@@ -73,65 +73,70 @@
   }
   
   .partnership-form form {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; /* Выравниваем поля по верху */
-    gap: 20px; /* Отступ между полями и кнопкой */
-  }
-  
-  .form-group {
-    flex: 1; /* Занимает все доступное пространство */
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    font-family: 'Gilroy-ExtraBold';
+    width: 500px; /* Ширина формы */
+    display: flex; 
+    flex-direction: column; /* Размещаем элементы вертикально */
+    gap: 10px; /* Отступы между элементами */
+}
+
+.form-container {
+    display: flex; /* Контейнер для полей и кнопки */
+    gap: 10px; /* Отступ между полями и кнопкой */
+}
+
+.form-fields {
+    display: flex; /* Оборачиваем поля ввода в флекс-контейнер */
+    flex-direction: column; /* Располагаем элементы в столбик */
+    flex: 1; /* Поля формы занимают всю доступную ширину */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Отступ между полями */
+}
+
+.form-group label {
+    font-family: 'MyriadPro-Regular';
     font-size: 18px;
-  }
-  
-  .form-group input {
+}
+
+.form-group input {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px; /* Отступы внутри полей */
+    font-size: 16px; /* Размер шрифта */
     margin-top: 5px;
     background-color: #333;
-    border: none;
+    border: 1px solid white;
     color: #fff;
-    border-radius: 5px;
-  }
-  
-  .form-fields {
-    flex: 3; /* Контейнер для полей формы */
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Отступы между полями */
-  }
-  
-  .submit-button {
-    flex: 1; /* Кнопка занимает всё доступное пространство */
-    background-color: #1A1A1A;
-    color: #ffffff;
-    margin-top: 20px;
-    padding: 15px;
-    font-size: 24px;
+    border-radius: 10px;
+}
+
+.submit-button {
+  background-color: #1A1A1A;
+  color: #ffffff;
+    padding: 15px; /* Отступы кнопки */
+    font-size: 20px; /* Размер шрифта кнопки */
     font-family: 'Gilroy-ExtraBold';
     border: none;
     cursor: pointer;
     border-radius: 20px;
-    height: 250px; /* Кнопка на всю высоту формы */
-    transition: background-color 0.3s ease;
     border: 1px solid white;
-  }
-  
-  .submit-button:hover {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-  }
-  
-  .partnership-form p {
+    flex-grow: 0; /* Убираем растяжение кнопки */
+    height: 200px; /* Высота кнопки устанавливается автоматически */
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+}
+
+.partnership-form p {
     font-family: 'MyriadPro-Regular';
     font-size: 18px;
-  }
+    margin-top: 10px; /* Отступ сверху для текста */
+}
+
   
   /* Адаптивные стили для мобильных устройств */
   @media (max-width: 768px) {

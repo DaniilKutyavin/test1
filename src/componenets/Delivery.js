@@ -48,7 +48,7 @@ const Delivery = () => {
     <div className="header">
     <div className="title-block">
     <h1>Доставка</h1>
-    <p>Вы можете получить доставку в течение 3х дней или оформить заказ заранее на желаемую дату!</p>
+    <p className="pod">Вы можете получить доставку в течение 3х дней или оформить заказ заранее на желаемую дату!</p>
     </div>
   </div>
   <div className="delivery-container">
@@ -91,7 +91,7 @@ const Delivery = () => {
         <div className="block">
           <div className="con">
             <div className="left-half">
-              <div className="top-block"><h2>Оплата</h2> <p>Убедитесь что стоимость вашего заказа состовляет не ниже 30000 рублей.</p></div>
+              <div className="top-block"><h2>Оплата</h2> <p>Убедитесь что стоимость вашего заказа состовляет не ниже 35000 рублей.</p></div>
               <div className="bottom-block"><img src={icon3}/></div>
             </div>
             <div className="right-half">

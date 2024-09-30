@@ -32,7 +32,7 @@ const Prod = () => {
             <div className="header">
             <div className="title-block">
                 <h1>Закупка С/Х культур</h1>
-                <p>Продайте по максимально выгодным ценам</p>
+                <p className="pod">Продайте по максимально выгодным ценам</p>
                 </div>
             </div>
             <div className="wrapperr">

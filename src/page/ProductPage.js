@@ -10,9 +10,9 @@ const ProductPage = () => {
     return (
         <>
             <div className="header">
-            <div className="title-block">
+            <div className="title-block"> 
                 <h1>Торнадо 500</h1>
-                <p>Водный раствор ВР.</p>
+                <p className="pod">Водный раствор ВР.</p>
                 </div>
             </div>
 
@@ -30,9 +30,15 @@ const ProductPage = () => {
                             </p>
                             <div className="productVolume">
                                 <span>10л</span>
-                                <p className="producer">Производитель: avgust</p>
-                                <p className="pdfLink">Свидетельство PDF 2.16 МБ</p>
-                                <p className="pdfLink">Презентация PDF 1.96 МБ</p>
+                                <p className="producer">Производитель:</p>
+                                <div className='sertif'>
+    <p className="pdfLink">
+        <spam className="dot"></spam> Свидетельство PDF 2.16 МБ
+    </p>
+    <p className="pdfLink">
+        <spam className="dot"></spam> Презентация PDF 1.96 МБ
+    </p>
+</div>
                             </div>
                         </div>
                         <div className="productImageAndPrice">

@@ -136,7 +136,7 @@
 }
 
 .blur-block {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(126, 121, 121, 0.2);
     backdrop-filter: blur(15px);
     padding: 20px;
     text-align: center;
@@ -149,6 +149,7 @@
     justify-content: center; /* Центрируем содержимое по вертикали */
     align-items: flex-start; /* Выравнивание элементов по левому краю */
     pointer-events: auto;
+    border: 1px solid grey;
 }
 .top-left {
     border-top-left-radius: 25px; /* Закруглённый верхний левый угол */

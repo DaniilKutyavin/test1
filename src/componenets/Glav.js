@@ -8,7 +8,7 @@ import "../style/shop.css";
 import { Link, useLocation } from "react-router-dom";
 import Cart from './Cart';
 import videoSrc from "../img/main.gif";
-
+import PopupInfo from './PopupInfo';
 
 import img1 from "../img/kb1.png";
 import img2 from "../img/kb2.png";
@@ -73,6 +73,9 @@ const Shop = () => {
     return () => clearTimeout(timeout); // очистить таймаут при размонтировании компонента
   }, []);
 
+  const [isPopupOpen, setIsPopupOpen] = useState(false); // Состояние для всплывающего окна
+  const handleGiftClick = () => setIsPopupOpen(true); // Открытие всплывающего окна
+  const closePopup = () => setIsPopupOpen(false); // Закрытие всплывающего окна
   return (
     <>
        {isGifVisible && (
@@ -91,7 +94,7 @@ const Shop = () => {
           pagination={{ clickable: true }}
           className="shop-slider"
         >
-          {[img6,img7,img8,img1, img2, img3, img4, img5].map((src, index) => (
+          {[img8,img1, img2, img3, img4, img5].map((src, index) => (
             <SwiperSlide key={index} className="shop-slide">
               <img src={src} alt={`Slide ${index}`} />
             </SwiperSlide>
@@ -128,7 +131,7 @@ const Shop = () => {
         ref={rewardScaleRef}
       >
           <div className="gift-container">
-            <img src={pod} alt="Gift" />
+            <img src={pod} alt="Gift" onClick={handleGiftClick}/>
             <div className="gift-text">
               <h4>СЗР в подарок</h4>
               <p>Как это работает?</p>
@@ -137,9 +140,9 @@ const Shop = () => {
 
           <div className="scale-container">
             <div className="scale-values">
-              <span className="value-1">30 000</span>
-              <span className="value-2">50 000</span>
-              <span className="value-3">100 000</span>
+              <span className="value-1">50 000</span>
+              <span className="value-2">100 000</span>
+              <span className="value-3">150 000</span>
             </div>
             <div className="scale-bars">
               <div className="bar bar-1"></div>
@@ -157,7 +160,8 @@ const Shop = () => {
         <div style={{ width: '100%', overflow: 'hidden' }}>
     
     </div>
-      {isCartOpen && <Cart onClose={closeCart} />}
+    {isCartOpen && <Cart onClose={closeCart} />}
+      {isPopupOpen && <PopupInfo onClose={closePopup} />}
       <Store />
     </>
   );

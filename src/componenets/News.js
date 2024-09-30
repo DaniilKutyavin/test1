@@ -29,7 +29,7 @@ const News = () => {
       <div className="header">
       <div className="title-block">
         <h1>Новости</h1>
-        <p>Будьте в курсе всех событий</p>
+        <p className="pod">Будьте в курсе всех событий</p>
         </div>
       </div>
       <div className="news-section">

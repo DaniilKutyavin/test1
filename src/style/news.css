@@ -83,6 +83,11 @@
   cursor: pointer;
   border-radius: 20px;
   font-family: 'MyriadPro-Regular';
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.read-button:hover {
+  color: black; /* Change text color to black on hover */
 }
 
 .arrow-icon {
