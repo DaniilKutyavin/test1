@@ -3,6 +3,8 @@ import '../style/Prod.css';
 import bask from '../img/корзина белая 1.svg';
 import iconProd from '../img/Образец ХСЗР на сайт.png';
 import arrowDown from '../img/стрелка вниз.svg';
+import lupa from '../img/лупа.svg';
+import krest from '../img/крестик.svg';
 import Store from '../componenets/Store';
 import Shkal from '../componenets/Shkal';
 
@@ -50,7 +52,7 @@ const Prod = () => {
                             <p>1.Бесплатная доставка от 35000 руб</p>
                             <p>2.По безналичному расчету к стоимости ХСЗР добавляется 5% в корзине автоматически подтянутся суммы после добавления товара</p>
                         </div>
-                        <button className="close-btn" onClick={closeInfoBlock}>&times;</button>
+                        <button className="close-btn" onClick={closeInfoBlock}><img src={krest}></img></button>
                     </div>
                 )}
 </div>
@@ -66,7 +68,7 @@ const Prod = () => {
         placeholder="Поиск..." 
         className="search-input" 
     />
-    <span className="search-icon">&#128269;</span> {/* HTML код значка лупы */}
+    <span className="search-icon"><img src={lupa}></img></span> {/* HTML код значка лупы */}
 </div>
                             <div className="filter-section">
                                 <h2 onClick={() => toggleFilter('category')}>

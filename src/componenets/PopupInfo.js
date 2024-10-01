@@ -1,21 +1,22 @@
 import React from 'react';
 import '../style/PopupInfo.css';
 import iconProd from '../img/Образец ХСЗР на сайт.png'; // Импортируем изображение
+import present from '../img/подарок белый.svg'; 
 
 const products = [
   {
     name: 'Фумигант «Флаггард»',
-    price: 'От 30000р',
-    image: iconProd, // Используем одно изображение
-  },
-  {
-    name: 'Адъювант «Адью»',
     price: 'От 50000р',
     image: iconProd, // Используем одно изображение
   },
   {
-    name: 'Инсектицид «Аспид»',
+    name: 'Адъювант «Адью»',
     price: 'От 100000р',
+    image: iconProd, // Используем одно изображение
+  },
+  {
+    name: 'Инсектицид «Аспид»',
+    price: 'От 150000р',
     image: iconProd, // Используем одно изображение
   },
 ];
@@ -24,7 +25,10 @@ const PopupInfo = ({ onClose }) => {
   return (
     <div className="popup-info">
       <button className="close-button" onClick={onClose}>×</button>
-      <h4 className="popup-title">ПОДАРОК</h4>
+      <div className="title-with-present">
+        <h4 className="popup-title">ПОДАРОК</h4>
+        <img className="present" src={present} alt="Подарок" />
+      </div>
       <p className="popup-description">
         Заказывайте и получайте подарочные СЗР в зависимости от суммы заказа. 
         Акция не распространяется на товары уже с включенной скидкой и действует только при заказе на сайте!

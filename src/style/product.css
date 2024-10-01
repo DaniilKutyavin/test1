@@ -260,3 +260,15 @@
         font-size: 6vw; /* Further adjust for very small screens */
     }
 }
+
+table {
+    border-collapse: collapse;
+    margin: 0 auto; /* Выравнивание таблицы по центру */
+    width: 100%; /* Можно настроить ширину по необходимости */
+}
+
+table td, table th {
+    border: 1px solid white; /* Цвет линий таблицы белый */
+    padding: 10px;
+    text-align: center; /* Центрирование текста в ячейках */
+}

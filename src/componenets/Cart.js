@@ -11,21 +11,30 @@ const Cart = ({ onClose }) => {
 
                 {/* Product Card */}
                 <div className="cart-item">
-                    <img src={iconProd} alt="Product" className="cart-item-image" />
                     <div className="cart-item-info">
                         <p className="product-title">Торнадо 540</p>
-                        <p className="product-description">Изопропиламинная соль глифосата кислоты, 500 г/л к-ты, 10 л.</p>
+                        <p className="product-descriptionn">Изопропиламинная соль глифосата кислоты, 500 г/л к-ты</p> 
+                        <p className='obem'>10 л.</p>
                         <div className="quantity-controls">
                             <button className="quantity-button">-</button>
                             <span className="quantity">1</span>
                             <button className="quantity-button">+</button>
-                            <span className="pproduct-price">Цена: <strong>1000 Р</strong></span>
+                            <span className='price-cart'>13000 ₽</span>
                         </div>
                     </div>
+                    <img src={iconProd} alt="Product" className="cart-item-image" />
                 </div>
 
-                <div className="total">
-                    <p>Итоговая сумма: <strong>1000 Р</strong></p>
+                <div className="sum-section">
+                    <p className="sum-label">Сумма:</p>
+                    <div className="sum-details non-cash">
+                        <span className="cash-amount">13000 ₽&ensp; </span>
+                        <span className="cash-method"> Наличный расчет</span>
+                    </div>
+                    <div className="sum-details non-cash">
+                        <span className="non-cash-amount">13650 ₽&ensp; </span>
+                        <span className="non-cash-method"> Безналичный расчет</span>
+                    </div>
                 </div>
 
                 <h3 className="section-title">Данные</h3>

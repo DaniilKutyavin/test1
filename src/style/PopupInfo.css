@@ -1,71 +1,82 @@
 .popup-info {
     position: fixed;
-    bottom: 100px; /* Расстояние от нижней части экрана */
-    left: 20px; /* Расстояние от левой части экрана */
-    background-color: rgba(19, 18, 18, 0.9); /* Полупрозрачный белый фон */
-    border: 1px solid #ccc; /* Граница блока */
-    padding: 20px; /* Отступы внутри блока */
-    z-index: 1000; /* Обеспечивает, что блок будет поверх других элементов */
-    border-radius: 15px; /* Закругленные углы */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Тень блока */
-    width: 500px; /* Фиксированная ширина блока */
+    bottom: 100px;
+    left: 20px;
+    background-color: rgba(19, 18, 18, 0.9);
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 500px;
 }
 
 .close-button {
-    background: none; /* Убираем фоновый цвет кнопки */
-    border: none; /* Убираем рамку кнопки */
-    font-size: 24px; /* Размер шрифта */
-    cursor: pointer; /* Указываем, что это кнопка */
-    position: absolute; /* Абсолютное позиционирование для кнопки */
-    top: 10px; /* Расстояние от верхней части блока */
-    right: 10px; /* Расстояние от правой части блока */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     color: white;
 }
 
+.title-with-present {
+    display: flex;
+    align-items: center; /* Элементы выровнены по центру по вертикали */
+    gap: 10px; /* Отступ между заголовком и картинкой */
+}
+
 .popup-title {
-    font-size: 20px; /* Размер заголовка */
-    font-weight: bold; /* Жирный шрифт */
-    margin: 0; /* Убираем отступы */
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.present {
+    width: 30px; /* Размер картинки подарка */
+    height: auto;
 }
 
 .popup-description {
-    font-size: 14px; /* Размер текста описания */
-    margin: 10px 0; /* Отступы сверху и снизу */
+    font-size: 14px;
+    margin: 10px 0;
 }
 
 .popup-products {
-    display: flex; /* Flex-контейнер для продуктов */
-    flex-direction: row; /* Горизонтальная компоновка */
-    justify-content: flex-start; /* Выравнивание по левому краю */
-    margin-top: 10px; /* Отступ сверху для продуктов */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 10px;
 }
 
 .product-itemm {
-    display: flex; /* Flex-контейнер для каждой карточки товара */
-    align-items: center; /* Выравнивание по центру по вертикали */
-    width: 120px; /* Фиксированная ширина для продукта */
-    margin-right: 20px; /* Отступ между карточками товара */
-    flex-shrink: 0; /* Запретить сжатие блока */
+    display: flex;
+    align-items: center;
+    width: 120px;
+    margin-right: 20px;
+    flex-shrink: 0;
 }
 
 .product-imagee {
-    width: 70px; /* Увеличенная ширина изображения */
-    height: 70px; /* Увеличенная высота изображения */
-    object-fit: cover; /* Обрезаем изображение по размеру */
-    margin-right: 5px; /* Отступ справа от изображения */
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 5px;
 }
 
 .product-info {
-    display: flex; /* Flex-контейнер для информации о продукте */
-    flex-direction: column; /* Вертикальная компоновка для текста */
+    display: flex;
+    flex-direction: column;
 }
 
 .product-info h5 {
-    margin: 0; /* Убираем отступы */
-    font-size: 14px; /* Размер текста для названия продукта */
+    margin: 0;
+    font-size: 14px;
 }
 
 .product-info p {
-    margin: 0; /* Убираем отступы */
-    font-size: 12px; /* Размер текста для цены */
+    margin: 0;
+    font-size: 12px;
 }

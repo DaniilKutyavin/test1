@@ -10,15 +10,12 @@ import Cart from './Cart';
 import videoSrc from "../img/main.gif";
 import PopupInfo from './PopupInfo';
 
-import img1 from "../img/kb1.png";
-import img2 from "../img/img9.jpg";
-import img3 from "../img/kb3.png";
-import img4 from "../img/img10.jpg";
-import img5 from "../img/img11.jpg";
-import img6 from "../img/img12.jpg";
-import img7 from "../img/img13.jpg";
-import img9 from "../img/img14.jpg";
-import img8 from "../img/img8.jpg";
+import img1 from "../img/img1.jpg";
+import img2 from "../img/img2.jpg";
+import img3 from "../img/img3.jpg";
+import img4 from "../img/img4.jpg";
+import img5 from "../img/img5.jpg";
+import img6 from "../img/img6.jpg";
 import circle1 from "../img/кольцо1.svg";
 import circle2 from "../img/кольцо2.svg";
 import circle3 from "../img/кольцо3.svg";
@@ -95,7 +92,7 @@ const Shop = () => {
           pagination={{ clickable: true }}
           className="shop-slider"
         >
-          {[img8,img1, img2, img3, img4, img5, img6, img7, img9].map((src, index) => (
+          {[img1, img2, img3, img4, img5, img6].map((src, index) => (
             <SwiperSlide key={index} className="shop-slide">
               <img src={src} alt={`Slide ${index}`} />
             </SwiperSlide>

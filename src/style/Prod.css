@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'a_PlakatCmpl';
+    src: url('../fonts/ofont.ru_a_PlakatCmpl.ttf') format('woff'); /* Update path if necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     background-color: #1A1A1A;
     font-family: 'MyriadPro-Regular', sans-serif;
@@ -303,29 +310,30 @@ body {
     width: 30%;
     display: flex;
     align-items: center;
-    background-color: #3f0a0a; /* Красный фон блока */
+    background-color: #3F0A0A; /* Красный фон блока */
     padding: 10px;
     border-radius: 15px;
     color: white;
     margin-right: 100px;
-    border:  solid 2px #aa0202;
+    border:  solid 2px #AA0202;
 }
 
 .exclamation {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #aa0202;
-    border:  solid 1px #9e320d;
+    background-color: #592222;
+    border:  solid 1px #AA0202;
     color: white;
     border-radius: 50%;
     width: 30px;
     height: 30px;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     margin-right: 10px;
     min-width: 30px;  /* Фиксируем минимальную ширину */
     min-height: 30px; /* Фиксируем минимальную высоту */
+    font-family: 'a_PlakatCmpl', sans-serif;
 }
 
 .info-text p {
@@ -335,14 +343,21 @@ body {
 }
 
 .close-btn {
+    background-color: #592222;
     position: absolute;
     top: 5px; /* Отступ от верхнего края */
     right: 5px; /* Отступ от правого края */
-    background: none; /* Убираем фон */
-    border: none; /* Убираем рамку */
     color: white;
     font-size: 26px;
+    border:  solid 1px #AA0202;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
+}
+.close-btn img {
+    width: 13px;
+    padding-bottom: 6px;
 }
 
 .close-btn:hover {
@@ -379,4 +394,8 @@ body {
   }
   .filter-content p {
     margin-bottom: -10px;
+  }
+
+  .search-icon img {
+    width: 20px;
   }
