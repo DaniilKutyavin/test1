@@ -131,7 +131,6 @@ body {
     font-weight: bold;
     background:white;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 .right-section {
     flex: 1;
@@ -156,7 +155,7 @@ body {
     width: 95%;
     text-decoration: none; /* Remove underline */
     color: inherit; /* Inherit text color from parent */
-    width: 100%; /* Занимает всю ширину контейнера */
+    width: 92%; /* Занимает всю ширину контейнера */
   
 }
 
@@ -216,7 +215,7 @@ body {
 }
 
 .product-card:hover .product-price {
-    transform: translateX(calc(340%)); /* Move price to the right */
+    transform: translateX(calc(300%)); /* Move price to the right */
     margin-right: 0; /* Remove margin */
 }
 

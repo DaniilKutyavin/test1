@@ -51,9 +51,9 @@ const Cart = ({ onClose }) => {
 
                 <h3 className="section-title">Способ оплаты</h3>
                 <div className="payment-options">
-                    <label><input type="radio" name="payment" className='intext'/> Наличными курьеру</label>
-                    <label><input type="radio" name="payment" className='intext'/> Онлайн на сайте</label>
-                    <label><input type="radio" name="payment" className='intext'/> Банковский перевод</label>
+                    <label><input type="radio" name="payment" /> Наличными курьеру</label>
+                    <label><input type="radio" name="payment" /> Онлайн на сайте</label>
+                    <label><input type="radio" name="payment" /> Банковский перевод</label>
                 </div>
 
                 <h3 className="section-title">Комментарий</h3>

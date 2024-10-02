@@ -150,7 +150,6 @@
 .payment-options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
 }
 
 .payment-options label {
@@ -159,33 +158,38 @@
     gap: 10px;
     font-size: 1.1em; /* Увеличим размер текста для лучшей видимости */
     color: white;
+    padding: 5px;
 }
 
 .payment-options input[type="radio"] {
     appearance: none; /* Убираем стандартный стиль радио-кнопок */
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     border: 2px solid white; /* Белая граница для кнопок */
     border-radius: 50%; /* Закругляем кнопки */
     outline: none;
     cursor: pointer;
     position: relative;
+    background-color: white;
+    transition: transform 0.3s ease; /* Плавное изменение размера */
+}
+
+.payment-options input[type="radio"]:checked {
+    transform: scale(1.2); /* Увеличиваем кнопку на 20% при выборе */
 }
 
 .payment-options input[type="radio"]:checked::before {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: #ABF538; /* Заливка при выборе */
+    width: 10px;
+    height: 10px;
+    background-color: black; /* Черный кружок внутри при выборе */
     border-radius: 50%;
-    top: 5px;
-    left: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.payment-options input[type="radio"]:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5); /* Добавляем эффект фокуса */
-}
 
 .product-descriptionn{
     font-size: 12px;

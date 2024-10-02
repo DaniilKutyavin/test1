@@ -52,9 +52,9 @@ const LoginForm = ({ onClose }) => {
 
     return (
         <div className="login-form-overlay">
-            <div className="login-form">
+            <div className="login-form"> 
                 <div className="close-btnn" onClick={onClose}>✖</div>
-                <h1>{isRegistering ? 'Создать учётную запись' : 'Вход'}</h1>
+                <h1 className='loginotst'>{isRegistering ? 'Создать учётную запись' : 'Вход'}</h1>
                 <p className="instruction-text" dangerouslySetInnerHTML={{
                     __html: isRegistering 
                         ? '<h3>Скидка каждому новому покупателю 500 руб.!</h3> <p><h3>Что необходимо для того, чтобы получить скидку?</h3></p> Зарегистрироваться на сайте. Добавить в корзину товары на сумму от 35000 руб <p></p>Ввести подарочный промо-код из письма, полученного при регистрации' 
@@ -165,7 +165,7 @@ const LoginForm = ({ onClose }) => {
                             Создав учётную запись на нашем сайте, вы будете тратить
                             меньше времени на оформление заказа, сможете хранить
                             несколько адресов доставки, отслеживать состояние
-                            заказов, а также многое другое.
+                            заказов, а также многое другое. 
                         </p>
                         <button className="submit-buttonn" onClick={handleRegisterClick}>Создать</button>
                     </>
